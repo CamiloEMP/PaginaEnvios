@@ -1,3 +1,9 @@
+.FLogin {
+  background-color: #fff;
+  width: 350px;
+  height: 450px;
+}
+
 .FLogin-close:hover {
   cursor: pointer;
 }

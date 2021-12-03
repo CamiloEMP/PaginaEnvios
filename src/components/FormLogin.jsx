@@ -10,7 +10,7 @@ const FormLogin = ({ openModal, setOpenModal }) => {
   };
 
   return (
-    <form onClick={onSubmitLogin}>
+    <form onClick={onSubmitLogin} className="FLogin">
       <button onClick={closeLogin} className="FLogin-close">
         X
       </button>
