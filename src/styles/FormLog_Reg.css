@@ -1,4 +1,4 @@
-.FLogin {
+.Form {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -11,6 +11,10 @@
   padding: 20px 45px;
 }
 
+.Form h3 {
+  font-weight: 500;
+}
+
 .icon-close {
   font-size: 32px;
   position: absolute;
@@ -18,7 +22,7 @@
   left: 300px;
 }
 
-.FLogin-close {
+.Form-close {
   border: 0;
   background-color: #fff;
 }
@@ -35,18 +39,13 @@
   margin: 20px auto;
 }
 
-.Flogin-inputs-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.Flogin-label {
+.Form-label {
   text-align: initial;
   font-size: 15px;
   padding-left: 5px;
 }
 
-.Flogin-input {
+.Form-input {
   height: 35px;
   padding-left: 10px;
   padding-right: 10px;
@@ -56,12 +55,13 @@
   outline: none;
 }
 
-.Flogin-container-btn {
+.Form-container-btn {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.Flogin-btn {
+.Form-btn {
   width: 130px;
   height: 40px;
   border: none;
@@ -70,4 +70,8 @@
   font-size: 24px;
   font-weight: 700;
   border-radius: 20px;
+}
+
+.FRegistro-title {
+  margin-bottom: 30px;
 }

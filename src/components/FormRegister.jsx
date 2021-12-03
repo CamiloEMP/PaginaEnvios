@@ -1,4 +1,5 @@
-import React from "react";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import "../styles/FormLog_Reg.css";
 
 const FormRegister = ({ openModal, setOpenModal }) => {
   const onSubmitSignUp = (event) => {
@@ -10,32 +11,50 @@ const FormRegister = ({ openModal, setOpenModal }) => {
   };
 
   return (
-    <form onClick={onSubmitSignUp}>
-      <button onClick={closeLogin} className="FSignUp-close">
-        X
+    <form onClick={onSubmitSignUp} className="Form">
+      <button onClick={closeLogin} className="Form-close">
+        <IoCloseCircleOutline className="icon-close" />
       </button>
-      <h2>DeliveryXpress</h2>
-      <label htmlFor="FSignUp-name">
-        name
-        <input type="text" id="FSignUp-name" name="FSignUp-name" />
+      <h3 className="FRegistro-title">DeliveryXpress</h3>
+      <label htmlFor="FRegister-name" className="Form-label">
+        Nombre
       </label>
-      <label htmlFor="FSignUp-email">
+      <input
+        type="text"
+        id="FRegister-name"
+        name="FRegister-name"
+        className="Form-input"
+      />
+      <label htmlFor="FRegister-email" className="Form-label">
         Email
-        <input type="email" id="FSignUp-email" name="FSignUp-email" />
       </label>
-      <label htmlFor="FSignUp-password">
-        Password
-        <input type="password" id="FSignUp-password" name="FSignUp-password" />
+      <input
+        type="email"
+        id="FRegister-email"
+        name="FRegister-email"
+        className="Form-input"
+      />
+      <label htmlFor="FRegister-password" className="Form-label">
+        Contraseña
       </label>
-      <label htmlFor="FSignUp-confirmPass">
-        Password
-        <input
-          type="password"
-          id="FSignUp-confirmPass"
-          name="FSignUp-confirmPass"
-        />
+      <input
+        type="password"
+        id="FRegister-password"
+        name="FRegister-password"
+        className="Form-input"
+      />
+      <label htmlFor="FRegister-confirmPass" className="Form-label">
+        Confirmar contraseña
       </label>
-      <button>Sign up</button>
+      <input
+        type="password"
+        id="FRegister-confirmPass"
+        name="FRegister-confirmPass"
+        className="Form-input"
+      />
+      <div className="Form-container-btn">
+        <button className="Form-btn">Sign up</button>
+      </div>
     </form>
   );
 };

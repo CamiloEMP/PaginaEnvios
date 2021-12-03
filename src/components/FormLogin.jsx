@@ -1,5 +1,6 @@
-import "../styles/FormLogin.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import "../styles/FormLog_Reg.css";
+
 const FormLogin = ({ openModal, setOpenModal }) => {
   const onSubmitLogin = (event) => {
     event.preventDefault();
@@ -10,18 +11,32 @@ const FormLogin = ({ openModal, setOpenModal }) => {
   };
 
   return (
-    <form onClick={onSubmitLogin} className="FLogin">
-      <button onClick={closeLogin} className="FLogin-close">
+    <form onClick={onSubmitLogin} className="Form">
+      <button onClick={closeLogin} className="Form-close">
         <IoCloseCircleOutline className="icon-close" />
       </button>
       <h3>DeliveryXpress</h3>
       <div className="Flogin-img-user"></div>
-      <label htmlFor="FLogin-email" className="Flogin-label">Email</label>
-      <input type="email" id="FLogin-email" name="FLogin-email" className="Flogin-input" />
-      <label htmlFor="FLogin-password" className="Flogin-label">Password</label>
-      <input type="password" id="FLogin-password" name="FLogin-password" className="Flogin-input" />
-      <div className="Flogin-container-btn">
-        <button className="Flogin-btn">Sign in</button>
+      <label htmlFor="FLogin-email" className="Form-label">
+        Email
+      </label>
+      <input
+        type="email"
+        id="FLogin-email"
+        name="FLogin-email"
+        className="Form-input"
+      />
+      <label htmlFor="FLogin-password" className="Form-label">
+        Password
+      </label>
+      <input
+        type="password"
+        id="FLogin-password"
+        name="FLogin-password"
+        className="Form-input"
+      />
+      <div className="Form-container-btn">
+        <button className="Form-btn">Sign in</button>
       </div>
     </form>
   );
