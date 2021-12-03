@@ -1,9 +1,73 @@
 .FLogin {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   background-color: #fff;
-  width: 350px;
+  width: 340px;
   height: 450px;
+  color: #000;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px 45px;
 }
 
-.FLogin-close:hover {
-  cursor: pointer;
+.icon-close {
+  font-size: 32px;
+  position: absolute;
+  top: 8px;
+  left: 300px;
+}
+
+.FLogin-close {
+  border: 0;
+  background-color: #fff;
+}
+
+.Flogin-img-user {
+  background-image: url("../img/User.png");
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.384);
+  margin: 20px auto;
+}
+
+.Flogin-inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Flogin-label {
+  text-align: initial;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.Flogin-input {
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.384);
+  border-radius: 20px;
+  outline: none;
+}
+
+.Flogin-container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.Flogin-btn {
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: hsla(205, 100%, 68%, 1);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 20px;
 }
