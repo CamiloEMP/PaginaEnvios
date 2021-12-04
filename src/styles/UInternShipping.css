@@ -1,0 +1,64 @@
+.description-shipping-UIS {
+  width: 70%;
+  margin: 30px auto;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  border-bottom: 1px solid rgba(22, 26, 29, 0.356);
+}
+
+.description-shipping-UIS span {
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.description-shipping-UIS  p {
+  margin: 0;
+  display: inline-block;
+  padding: 8px;
+}
+
+.state-cancel-UIS, .state-cancelled-UIS, .state-del-UIS {
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.state-cancel-UIS {
+  color: rgb(255, 0, 0);
+  background-color: rgba(247, 122, 122, 0.411);
+}
+
+.state-cancelled-UIS {
+  color: #000000;
+  background-color: #0000005b;
+}
+
+.state-del-UIS {
+  color: #107a75;
+  background-color: #44dfd788;
+}
+
+@media (min-width: 500px) {
+  .description-shipping-UIS{
+    grid-template-columns: 1fr 1fr;
+  }
+  .description-shipping-UIS span {
+    text-align: right;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 800px) {
+  .description-shipping-UIS{
+    width: 80%;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+  }
+
+  .description-shipping-UIS span {
+    display: none;
+  }
+}

@@ -1,30 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
-import { FormLogin } from "./components/FormLogin";
-import { FormRegister } from "./components/FormRegister";
-import { Login } from "./Modals/Login";
-import { Register } from "./Modals/Register";
-import { Prueba } from "./Prueba"; // ! Quitar simulacion
+import { Route, Routes} from "react-router-dom";
+import { UInternPackages } from "./components/UInternPackages";
+import { HeaderProvisional } from "./HeaderProvisional";
 
 function App() {
-  const [openModal, setOpenModal] = useState({
-    login: false,
-    signUp: false,
-  });
+
 
   return (
     <>
-      <Prueba openModal={openModal} setOpenModal={setOpenModal} />
-      {!!openModal.login && (
-        <Login>
-          <FormLogin openModal={openModal} setOpenModal={setOpenModal} />
-        </Login>
-      )}
-      {!!openModal.signUp && (
-        <Register>
-          <FormRegister openModal={openModal} setOpenModal={setOpenModal} />
-        </Register>
-      )}
+      <Routes>
+        <Route exact path="/user-intern" element={<UInternPackages />}/>
+        <Route exact path="/" element={<HeaderProvisional />}/>
+      </Routes>
+      
     </>
   );
 }
