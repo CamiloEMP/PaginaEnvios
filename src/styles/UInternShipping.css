@@ -15,7 +15,11 @@
 .description-shipping-UIS  p {
   margin: 0;
   display: inline-block;
-  padding: 8px;
+}
+
+.description-shipping-UIS  div button {
+  border: none;
+  padding: 4px 0;
 }
 
 .state-cancel-UIS, .state-cancelled-UIS, .state-del-UIS {
@@ -53,7 +57,7 @@
 @media (min-width: 800px) {
   .description-shipping-UIS{
     width: 80%;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     text-align: center;
   }

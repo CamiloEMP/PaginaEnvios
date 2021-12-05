@@ -10,3 +10,20 @@
   align-items: center;
   color: white;
 }
+
+.container-menu-mobile {
+  width: 80%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 36px;
+  list-style: none;
+  text-decoration: underline;
+  align-items: center;
+  font-weight: 700;
+}
+
+.container-menu-mobile a {
+  color: rgb(92, 187, 255);
+}

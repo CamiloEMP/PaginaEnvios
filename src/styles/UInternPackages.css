@@ -12,9 +12,16 @@
   margin-left: 30px;
 }
 
+.IoMenu-container {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
 .header-UIP .IoMenu {
   font-size: 32px;
   margin: 0 auto;
+  z-index: 25 !important;
 }
 
 .header-UIP .UserMenu-UIP {
@@ -86,6 +93,7 @@
 .main-UIP div svg {
   font-size: 26px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .container-lists-UIP {
@@ -109,16 +117,16 @@
 
 .title-lists-UIP {
   width: 80%;
-  padding: 50px 0;
   margin: 0 auto;
   text-align: center;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
   background-color: rgba(92, 187, 255, 0.507);
   border-radius: 12px;
   font-weight: 700;
-  padding: 5px;
+  padding: 15px 5px;
 }
 
 @media (max-width: 800px) {

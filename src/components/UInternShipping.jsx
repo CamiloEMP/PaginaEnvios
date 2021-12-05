@@ -14,7 +14,7 @@ const UInternShipping = ({ props }) => {
       <p>{code}</p>
       <span>Estado</span>
       <div>
-        <p
+        <button
           className={`state-UIS ${
             (state === "Cancelado" && "state-cancelled-UIS") ||
             (state === "Cancelar" && "state-cancel-UIS") ||
@@ -22,7 +22,7 @@ const UInternShipping = ({ props }) => {
           }`}
         >
           {state}
-        </p>
+        </button>
       </div>
     </div>
   );

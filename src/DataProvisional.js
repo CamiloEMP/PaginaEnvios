@@ -1,0 +1,51 @@
+export const dataF = [
+  {
+    nameDestinatary: "Pepito Joselio",
+    destiny: "Bogota",
+    direction: "calle 40 sur 11-79 este",
+    code: 848484851,
+    state: "Cancelar",
+  },
+  {
+    nameDestinatary: "Pepito Manuelito",
+    destiny: "Bogota",
+    direction: "calle 41 sur 11-79 este",
+    code: 748484851,
+    state: "Cancelado",
+  },
+  {
+    nameDestinatary: "Pepito pepe",
+    destiny: "Bogota",
+    direction: "calle 42 sur 11-79 este",
+    code: 8484841287,
+    state: "Entregado",
+  },
+  {
+    nameDestinatary: "Pepito lopez",
+    destiny: "Bogota",
+    direction: "calle 44 sur 11-79 este",
+    code: 8484903141,
+    state: "Entregado",
+  },
+  {
+    nameDestinatary: "Pepito Mora",
+    destiny: "Bogota",
+    direction: "calle 44 sur 11-79 este",
+    code: 82052141,
+    state: "Entregado",
+  },
+  {
+    nameDestinatary: "Pepito peña",
+    destiny: "Medellin",
+    direction: "calle 44 sur 11-79 este",
+    code: 8484875403141,
+    state: "Entregado",
+  },
+  {
+    nameDestinatary: "Pepito fresa",
+    destiny: "Bogota",
+    direction: "calle 44 sur 11-79 este",
+    code: 848495141,
+    state: "Cancelado",
+  },
+];
