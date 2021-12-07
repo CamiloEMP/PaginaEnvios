@@ -1,6 +1,6 @@
 import "../styles/UInternShipping.css";
 
-const UInternShipping = ({ props }) => {
+export const UInternShipping = ({ props }) => {
   const { nameDestinatary, destiny, direction, code, state } = props;
   return (
     <div className="description-shipping-UIS">
@@ -27,5 +27,3 @@ const UInternShipping = ({ props }) => {
     </div>
   );
 };
-
-export { UInternShipping };

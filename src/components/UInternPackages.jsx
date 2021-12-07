@@ -1,13 +1,11 @@
-import { IoMenu } from "react-icons/io5";
+import "../styles/UInternPackages.css";
+import { dataF } from "../DataProvisional";
+import { useState } from "react";
+import { Header } from "./Header/index";
 import { IoSearchOutline } from "react-icons/io5";
 import { UInternShipping } from "./UInternShipping";
-import { Link } from "react-router-dom";
-import logo from "../img/Logo.png";
-import "../styles/UInternPackages.css";
-import { useState } from "react";
-import { dataF } from "../DataProvisional";
-import { OpenMenuMobile } from "../Modals/OpenMenuMobile";
-const UInternPackages = ({openMenu, setOpenMenu}) => {
+import { ModalContext } from "../context/ModalContext";
+export const UInternPackages = () => {
   
   const [searchValue, setSearchValue] = useState("");
   let searchedValue = [];
@@ -36,30 +34,11 @@ const UInternPackages = ({openMenu, setOpenMenu}) => {
     setSearchValue(e.target.value);
   };
 
-  const onOpenMenu = () => {
-    setOpenMenu(!openMenu)
-  }
-
   return (
     <>
-      <header className="header-UIP">
-        <img src={logo} alt="" />
-        <div className="IoMenu-container">
-          <IoMenu className="IoMenu" onClick={onOpenMenu}/>
-          {!!openMenu && (
-            <OpenMenuMobile />
-          )}
-        </div>
-        <div className="UserMenu-UIP">
-          <Link to="/" className="path-UIP">
-            Home
-          </Link>
-          <Link to="/" className="path-UIP">
-            Username
-          </Link>
-          <button>Log Out</button>
-        </div>
-      </header>
+      <ModalContext>
+        <Header/>
+      </ModalContext>
       <main className="main-UIP">
         <div>
           <input
@@ -86,5 +65,3 @@ const UInternPackages = ({openMenu, setOpenMenu}) => {
     </>
   );
 };
-
-export { UInternPackages };
