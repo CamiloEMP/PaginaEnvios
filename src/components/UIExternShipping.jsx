@@ -1,17 +1,7 @@
 import "../styles/UInternShipping.css";
-import { useContext, useState } from "react";
-import { Context } from "../context/Context";
-
-export const UInternShipping = ({ props }) => {
+export const UIExternShipping = ({ props }) => {
   const { nameDestinatary, destiny, direction, code, state } = props;
-  const [stateUShipping, setStateUShipping] = useState(state)
-  const changeStateShipping = (e) => {
-    const value = e.target.innerHTML
-    if ( value === "Cancelar") {
-      e.target.classList.replace("state-cancel-UIS", "state-cancelled-UIS" )
-      setStateUShipping("Cancelado")
-    }
-  }
+
   return (
     <div className="description-shipping-UIS">
       <span>Nombre Destinatario</span>
@@ -25,16 +15,15 @@ export const UInternShipping = ({ props }) => {
       <span>Estado</span>
       <div>
         <button
-          onClick={changeStateShipping}
           className={`state-UIS ${
             (state === "Cancelado" && "state-cancelled-UIS") ||
             (state === "Cancelar" && "state-cancel-UIS") ||
             (state === "Entregado" && "state-del-UIS")
           }`}
         >
-          {stateUShipping}
+          {state}
         </button>
       </div>
     </div>
   );
-};
+}

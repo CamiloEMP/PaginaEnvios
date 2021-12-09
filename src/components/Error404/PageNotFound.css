@@ -1,0 +1,23 @@
+.container-error-404 {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container-error-404 img {
+  width: 350px;
+}
+
+.container-error-404 p {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 700px) {
+  .container-error-404 img {
+    width: 700px;
+  }
+}

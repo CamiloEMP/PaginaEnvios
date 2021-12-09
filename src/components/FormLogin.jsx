@@ -1,14 +1,14 @@
+import { useContext } from "react";
+import { Context } from "../context/Context";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import "../styles/FormLog_Reg.css";
 
-const FormLogin = ({ openModal, setOpenModal }) => {
+const FormLogin = () => {
   const onSubmitLogin = (event) => {
     event.preventDefault();
   };
 
-  const closeLogin = () => {
-    setOpenModal({ ...openModal, login: false });
-  };
+  const {closeLogin} = useContext(Context)
 
   return (
     <form onClick={onSubmitLogin} className="Form">

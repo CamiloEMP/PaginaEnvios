@@ -1,18 +1,18 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Context } from "../context/Context";
+import { useContext } from "react";
 import "../styles/FormLog_Reg.css";
 
-const FormRegister = ({ openModal, setOpenModal }) => {
+const FormRegister = () => {
   const onSubmitSignUp = (event) => {
     event.preventDefault();
   };
 
-  const closeLogin = () => {
-    setOpenModal({ ...openModal, signUp: false });
-  };
+  const { closeRegister } = useContext(Context);
 
   return (
     <form onClick={onSubmitSignUp} className="Form">
-      <button onClick={closeLogin} className="Form-close">
+      <button onClick={closeRegister} className="Form-close">
         <IoCloseCircleOutline className="icon-close" />
       </button>
       <h3 className="FRegistro-title">DeliveryXpress</h3>
