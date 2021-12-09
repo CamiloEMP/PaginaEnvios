@@ -1,10 +1,8 @@
-const Prueba = ({ openModal, setOpenModal }) => {
-  const onClickBtn = (event) => {
-    event.target.textContent === "Login"
-      ? setOpenModal({...openModal, login: true})
-      : setOpenModal({...openModal, signUp: true}); 
-  };
-  
+import { useContext } from "react";
+import { Context } from "./context/Context";
+
+const Prueba = () => {
+  const { onClickBtn } = useContext(Context)
   return (
     <div>
       <button className="btn-outline-primary" onClick={onClickBtn}>

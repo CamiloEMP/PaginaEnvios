@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { FormLogin } from "./components/FormLogin";
 import { FormRegister } from "./components/FormRegister";
+import { Context } from "./context/Context";
 import { Login } from "./Modals/Login";
 import { Register } from "./Modals/Register";
-import { Prueba } from "./Prueba"; // ! Quitar simulacion
+import { Prueba } from "./Prueba";
+
 const HeaderProvisional = () => {
-  const [openModal, setOpenModal] = useState({
-    login: false,
-    signUp: false,
-  });
+  const { openModal } = useContext(Context)
+  
   return (
     <>
-      <Prueba openModal={openModal} setOpenModal={setOpenModal} />
+      <Prueba />
       {!!openModal.login && (
         <Login>
-          <FormLogin openModal={openModal} setOpenModal={setOpenModal} />
+          <FormLogin />
         </Login>
       )}
       {!!openModal.signUp && (
         <Register>
-          <FormRegister openModal={openModal} setOpenModal={setOpenModal} />
+          <FormRegister />
         </Register>
       )}
     </>
