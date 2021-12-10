@@ -62,6 +62,9 @@ const GlobalContext = ({ children }) => {
     telefono: /^\d{7,14}$/, // 7 a 14 numeros.
   };
 
+  const [inputEmail, setInputEmail] = useState({ value: "", state: null });
+  const [inputPass, setInputPass] = useState({ value: "", state: null });
+
   return (
     <Context.Provider
       value={{
@@ -77,6 +80,10 @@ const GlobalContext = ({ children }) => {
         searchedValue,
         SearchNameDestinatary,
         expresionesRegulares,
+        inputEmail,
+        inputPass,
+        setInputEmail,
+        setInputPass,
       }}
     >
       {children}

@@ -6,10 +6,10 @@ import "../styles/FormLog_Reg.css";
 const FormLogin = () => {
   const onSubmitLogin = (event) => {
     event.preventDefault();
-    
   };
 
-  const {closeLogin} = useContext(Context)
+  const { closeLogin, inputPass, setInputPass, inputEmail, setInputEmail } =
+    useContext(Context);
 
   return (
     <form onClick={onSubmitLogin} className="Form">

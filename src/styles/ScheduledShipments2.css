@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.C-P {
+    display: grid;
+    grid-template-areas: "Title Title" "Labels Information";
+    width: 90%;
+    height: 650px;
+    background: #8FD0FF;
+    margin-left: 5%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius:10px;
+    grid-template-rows: 20% 1fr 10px;
+    grid-template-columns: 20% 1fr;
+    
+}
+
+
+.C-P .Title h1{
+    grid-area: Title;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 90%;
+
+}
+
+.C-P .Labels{
+    grid-area: Labels;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: block;
+    margin-top: 50%;
+
+}
+.C-P .Information{
+    grid-area: Information; 
+    margin-bottom: 10px;
+}
+
+.PersonaQueRecibe{
+    margin-top: 50px;
+    color: blue;
+}
+.C-P  .btnTrack{
+    width: 181px;
+    height: 37px;
+    left: 534px;
+    top: 457px;
+    border-radius: 20px;
+    background-color: #2097F6;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0;
+    bottom: 10px;
+}
+
+.C-P .btnTrack:hover{
+    background-color: white;
+    border: 2px solid #2097F6;
+    transition: 0.2s;
+}
+.C-P .btnTrack:active {
+    transform: translateY(4px);
+}
+.C-P  .btnEnvios{
+    width: 280px;
+    height: 37px;
+    left: 534px;
+    top: 457px;
+    border-radius: 20px;
+    background-color: #2097F6;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0;
+    bottom: 10px;
+}
+
+.C-P .btnEnvios:hover{
+    background-color: white;
+    border: 2px solid #2097F6;
+    transition: 0.2s;
+}
+.C-P .btnEnvios:active {
+    transform: translateY(4px);
+}
+
