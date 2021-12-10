@@ -14,7 +14,7 @@ function App() {
     <>
       <GlobalContext>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home-user-intern" element={<Home />} />
           <Route exact path="/user-extern" element={<UExternPackages />} />
           <Route exact path="/user-intern" element={<UInternPackages />} />
           <Route exact path="/ScheduledShipments1" element={<ScheduledShipments1 />} />
