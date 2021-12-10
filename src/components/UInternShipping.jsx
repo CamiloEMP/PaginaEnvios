@@ -1,6 +1,5 @@
 import "../styles/UInternShipping.css";
-import { useContext, useState } from "react";
-import { Context } from "../context/Context";
+import { useState } from "react";
 
 export const UInternShipping = ({ props }) => {
   const { nameDestinatary, destiny, direction, code, state } = props;
