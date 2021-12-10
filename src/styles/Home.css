@@ -158,7 +158,7 @@
 .container-img-box img:first-child {
 	position: absolute;
 	top: -10px;
-  left: 32px;
+	left: 32px;
 }
 
 .tabla-img {
@@ -175,8 +175,8 @@
 .tabla-img img:first-child {
 	position: absolute;
 	bottom: 12px;
-  right: 10px;
-  z-index: 1;
+	right: 10px;
+	z-index: 1;
 }
 
 

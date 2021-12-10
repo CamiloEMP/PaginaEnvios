@@ -30,13 +30,21 @@
 
 .C-P .Labels{
     grid-area: Labels;
-    margin-bottom: 10px;
-    margin: 0 auto;
-    margin-top: 15px;
-    display: block;
-    margin-top: 50%;
-
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 100px;
+    margin-left: 90px;
 }
+
+.Labels img:first-child {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
 .C-P .Information{
     grid-area: Information; 
     margin-bottom: 10px;
