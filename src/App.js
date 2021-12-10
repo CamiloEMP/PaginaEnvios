@@ -5,11 +5,10 @@ import { UExternPackages } from "./components/UExternPackages";
 import { UInternPackages } from "./components/UInternPackages";
 import { GlobalContext } from "./context/Context";
 import {PackegesReception} from "./components/PackegesReception";
-import { ScheduledShipments1} from "./components/ScheduledShipments1";
 import { ScheduledShipments2} from "./components/ScheduledShipments2";
 import { Home } from "./components/Home";
 import { HomeUsers } from "./components/HomeUsers";
-
+import { Recepcion } from "./components/Recepcion";
 function App() {
   return (
     <>
@@ -19,9 +18,8 @@ function App() {
           <Route exact path="/home-user-intern" element={<Home />} />
           <Route exact path="/user-extern" element={<UExternPackages />} />
           <Route exact path="/user-intern" element={<UInternPackages />} />
-          <Route exact path="/ScheduledShipments1" element={<ScheduledShipments1 />} />
           <Route exact path="/ScheduledShipments2" element={<ScheduledShipments2 />} />
-          <Route exact path="/PackegesReception" element={<PackegesReception />} />
+          <Route exact path="/Recepcion" element={<Recepcion />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </GlobalContext>
