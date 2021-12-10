@@ -1,4 +1,3 @@
-import "../styles/R.css";
 import { Header } from "./Header"
 
 export const Recepcion = ({ props }) => {
