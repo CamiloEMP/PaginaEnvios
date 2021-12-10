@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/* Contenedor */
+.container-e {
+  width: 80%;
+  height: 50%;
+  margin: 5% auto;
+  padding: 0;
+  border: 5px solid #8fd0ff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.titulo {
+  font-size: 26px;
+  font-weight: 600;
+  width: 100%;
+  background-color: #8fd0ff;
+  text-align: center;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.titulo p {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+/* Tarjetas */
+.contenedor-t {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  margin: 0 10px 20px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 11px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Descripcion-e a {
+  text-decoration: none;
+  color: #ff9490;
+}
+/* Hover para Descripcion-e a */
+.Descripcion-e a:hover {
+  text-decoration: none;
+  color: #8fd0ff;
+}
+.imagen-e {
+  margin: 0 10px;
+}
+@media screen and (min-width: 540px) {
+  .contenedor-t {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .contenedor-t {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 660px) {
+  .contenedor-t {
+    font-size: 15px;
+    padding: 15px 0;
+    justify-content: flex-start;
+  }
+  .imagen-e {
+    margin: 0 30px 0;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .grande {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+  }
+  contenedor-t {
+    width: 90%;
+  }
+  .Descripcion-e {
+    margin: 0 30px 0 0;
+  }
+}

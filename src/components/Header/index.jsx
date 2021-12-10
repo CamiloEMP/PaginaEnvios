@@ -7,7 +7,7 @@ import { Context } from "../../context/ModalContext";
 import { useContext } from "react";
 
 export const Header = () => {
-  const {openMenu, onOpenMenu} = useContext(Context)  
+  const {openMenu, onOpenMenu} = useContext(Context)
   return (
       <header className="header-UIP">
         <img src={logo} alt="" />
