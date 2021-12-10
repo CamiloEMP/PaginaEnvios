@@ -35,7 +35,7 @@ export const PackegesReception = () => {
                     </div>
                     <div>
                         <label> Costo de envío </label>
-                        <input type="text" id="ValorDeSeguro" name="ValorDeSeguro" />
+                        <input type="text" id="ValorDeEnvio" name="ValorDeEnvio" />
                     </div>
                     <div>
                         <label> Asegurado </label>

@@ -8,6 +8,7 @@ import { HeaderProvisional } from "./HeaderProvisional";
 import {PackegesReception} from "./components/PackegesReception";
 import { ScheduledShipments2} from "./components/ScheduledShipments2";
 import { Home } from "./components/Home";
+import { Recepcion } from "./components/Recepcion";
 function App() {
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/user-extern" element={<UExternPackages />} />
           <Route exact path="/user-intern" element={<UInternPackages />} />
           <Route exact path="/ScheduledShipments2" element={<ScheduledShipments2 />} />
-          <Route exact path="/PackegesReception" element={<PackegesReception />} />
+          <Route exact path="/Recepcion" element={<Recepcion />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </GlobalContext>
