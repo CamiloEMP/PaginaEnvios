@@ -11,41 +11,41 @@ import c5 from "../img/C5.png";
 export const Home = () => {
   return (
     <>
-      <Header> </Header>
+      <Header />
       <div className="container-home">
         <div class="Contenedor-P">
           <div class="Contenedor-1">
             <div className="container-img-box">
               <img src={c1} alt="" />
-              <img src={box_home} />
+              <img src={box_home} alt="" />
             </div>
             <p> Recepción de paquetes </p>
           </div>
           <div class="Contenedor-2">
             <div className="container-img-box">
               <img src={c2} alt="" />
-              <img src={box_home} />
+              <img src={box_home} alt="" />
             </div>
             <p> Asignar recogidas programadas </p>
           </div>
           <div class="Contenedor-3">
             <div className="container-img-box">
               <img src={c3} alt="" />
-              <img src={box_home} />
+              <img src={box_home} alt="" />
             </div>
             <p> Modificar estado del envio </p>
           </div>
           <div class="Contenedor-4">
             <div className="tabla-img">
               <img src={c4} alt="" />
-              <img src={tabla} />
+              <img src={tabla} alt="" />
             </div>
             <p> Reporte de envios programados </p>
           </div>
           <div class="Contenedor-5">
             <div className="tabla-img">
               <img src={c5} alt="" />
-              <img src={tabla} />
+              <img src={tabla} alt="" />
             </div>
             <p> Reporte de envios programados </p>
           </div>
