@@ -1,35 +1,56 @@
 import "../styles/Home.css";
-import { Header } from "./Header"
-import img1 from "../img/box-home.png";
-import img2 from "../img/Tabla.png";
+import { Header } from "./Header";
+import box_home from "../img/box-home.png";
+import tabla from "../img/Tabla.png";
+import c1 from "../img/C1.png";
+import c2 from "../img/C2.png";
+import c3 from "../img/C3.png";
+import c4 from "../img/C4.png";
+import c5 from "../img/C5.png";
 
-export const Home = ({ props }) => {
-    return (
-        <>
-        <Header> </Header>
+export const Home = () => {
+  return (
+    <>
+      <Header> </Header>
+      <div className="container-home">
         <div class="Contenedor-P">
-            <div class = "Contenedor-1">
-                <img src={img1}/> 
-                <p> Recepción de paquetes </p>
+          <div class="Contenedor-1">
+            <div className="container-img-box">
+              <img src={c1} alt="" />
+              <img src={box_home} />
             </div>
-            <div class = "Contenedor-2">
-                <img src={img1}/> 
-                <p> Asignar recogidas programadas </p>
+            <p> Recepción de paquetes </p>
+          </div>
+          <div class="Contenedor-2">
+            <div className="container-img-box">
+              <img src={c2} alt="" />
+              <img src={box_home} />
             </div>
-            <div class = "Contenedor-3">
-                <img src={img1}/> 
-                <p> Modificar estado del envio </p>
+            <p> Asignar recogidas programadas </p>
+          </div>
+          <div class="Contenedor-3">
+            <div className="container-img-box">
+              <img src={c3} alt="" />
+              <img src={box_home} />
             </div>
-            <div class = "Contenedor-4">
-                <img src={img2}/> 
-                <p> Reporte de envios programados </p>
+            <p> Modificar estado del envio </p>
+          </div>
+          <div class="Contenedor-4">
+            <div className="tabla-img">
+              <img src={c4} alt="" />
+              <img src={tabla} />
             </div>
-            <div class = "Contenedor-5">
-                <img src={img2}/> 
-                <p> Reporte de envios programados </p>
+            <p> Reporte de envios programados </p>
+          </div>
+          <div class="Contenedor-5">
+            <div className="tabla-img">
+              <img src={c5} alt="" />
+              <img src={tabla} />
             </div>
-    </div>
+            <p> Reporte de envios programados </p>
+          </div>
+        </div>
+      </div>
     </>
-)
+  );
 };
-
