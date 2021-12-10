@@ -10,9 +10,9 @@ body {
   padding: 0;
 }
 /* Contenedor */
-.container-e {
+.container-e-2 {
   width: 400px;
-  height: 470px;
+  height: 520px;
   margin: 5% auto;
   padding: 0;
   border: 5px solid #8fd0ff;
@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.titulo {
+.titulo-2 {
   font-size: 26px;
   font-weight: 600;
   width: 100%;
@@ -30,16 +30,16 @@ body {
   margin: 0;
   padding: 0;
 }
-.titulo p {
+.titulo-2 p {
   margin: 0 auto;
 }
-.titulo1 {
+.titulo1-2 {
   padding: 10px 0 0;
 }
-.subtitulo {
+.subtitulo-2 {
   padding: 0 0 20px;
 }
-.contenedor-t {
+.contenedor-t-2 {
   margin: 0 10px 20px;
   padding: 10px 0;
   display: flex;
@@ -47,18 +47,19 @@ body {
   font-size: 12px;
   justify-content: center;
   align-items: center;
+  border: none;
 }
-.contenedor-t img {
+.contenedor-t-2 img {
   align-self: flex-start;
 }
-.contenedor-t button {
+.contenedor-t-2 button {
   align-self: flex-end;
 }
-.Descripcion-e {
+.Descripcion-e-2 {
   padding: 10px 0;
   margin: 0 0 20px;
 }
-.propietario {
+.propietario-2 {
   font-weight: bold;
 }
 /* Haz el css de un button con hover */

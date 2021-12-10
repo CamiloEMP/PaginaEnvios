@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.C-P {
+    display: grid;
+    grid-template-areas: "Title Title" "Labels Information";
+    width: 90%;
+    height: 800px;
+    margin-left: 5%;
+    margin-top: px;
+    margin-bottom: 50px;
+    border-radius:10px;
+    grid-template-rows: 20% 1fr 0px;
+    grid-template-columns: 30% 1fr;
+}
+
+
+.C-P .Title h1{
+    grid-area: Title;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 90%;
+
+}
+
+.C-P .Labels{
+    text-align: center;
+    margin: 0px auto;
+    margin-top: -95px;
+    width: 100%;
+    background-color: #8FD0FF;
+    display: block;
+    position: relative;
+
+}
+
+
+.C-P .Information{
+    grid-area: Information; 
+    margin-bottom: 10px;
+}
+

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Group169 from "src/img/Group 169.png";
-import "src/styles/Entregados1.css";
+/* import Group169 from "../img/Group169"; */
+import "../styles/Entregados1.css";
 export const Entregas = () => {
     return (
       <>
@@ -12,7 +12,7 @@ export const Entregas = () => {
                 <div className="grande">
                     <div ClasName="contenedor-t">
                         <div className="imagen-e">
-                            <img src= {Group169} alt="#"/> 
+                            {/* <img src= {Group169} alt="#"/>  */}
                         </div>
                         <div className="Descripcion-e">
                             <p>Número de guía: 12455QJE</p>

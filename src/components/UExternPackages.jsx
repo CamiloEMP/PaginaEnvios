@@ -1,11 +1,10 @@
-import "../styles/UInternPackages.css";
+import { Header } from "./Header"
+import { IoSearchOutline } from "react-icons/io5";
 import { Context } from "../context/Context";
 import { useContext } from "react";
-import { Header } from "./Header/index";
-import { IoSearchOutline } from "react-icons/io5";
-import { UInternShipping } from "./UInternShipping";
+import { UIExternShipping } from "./UIExternShipping";
 
-export const UInternPackages = () => {
+export const UExternPackages = () => {
   const { searchValue, searchedValue, SearchNameDestinatary } =
     useContext(Context);
   return (
@@ -30,10 +29,10 @@ export const UInternPackages = () => {
             <li>Estado</li>
           </ul>
           {searchedValue.map((item) => (
-            <UInternShipping props={item} key={item.code} />
+            <UIExternShipping props={item} key={item.code} />
           ))}
         </section>
       </main>
     </>
-  );
-};
+  )
+}
