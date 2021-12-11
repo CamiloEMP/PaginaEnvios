@@ -7,12 +7,8 @@ import { Context } from "../../context/Context";
 import { useContext } from "react";
 
 export const Header = () => {
-<<<<<<< HEAD
-  const {openMenu, onOpenMenu} = useContext(Context)
-=======
   const { openMenu, onOpenMenu } = useContext(Context);
 
->>>>>>> 97f46292085007eae353ea7ff59554f17b020249
   return (
       <header className="header-UIP">
         <img src={logo} alt="" />
