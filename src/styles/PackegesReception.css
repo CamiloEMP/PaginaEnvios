@@ -32,7 +32,17 @@
     border-color: white;
     text-indent: 10px;
     justify-content: space-between;
+    overflow-y: scroll;
+    resize:none;
+    border-radius: 20px;
 }
+.Container .InputDescription::-webkit-scrollbar {
+    background-color: #8FD0FF;
+    border-radius: 50px;
+    width: 0px;
+}
+
+
 
 .title h1{
     height: 100%;
