@@ -39,7 +39,7 @@ export const PackegesReception = () => {
                 </div>
                 
                 <input type="text" id="TotalPago" name="TotalPago" disabled />
-                <input type="text" id="PackageDescription" name="PackageDescription" class="InputDescription"/>
+                <textarea type="text" id="PackageDescription" name="PackageDescription" class="InputDescription"/>
                 <button id="GenerarGuia" name="GenerarGuia" class="btnGenerarGuia"> Generar guía </button>
             </div>
         </div>
