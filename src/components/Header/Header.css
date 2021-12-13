@@ -47,7 +47,7 @@
 .header-UIP .UserMenu-UIP button {
   padding: 10px 15px;
   color: #fff;
-  border: none;
+  border: 3px solid rgb(92, 187, 255);
   border-radius: 22px;
   background-color: rgb(92, 187, 255);
   font-size: 22px;
@@ -58,6 +58,7 @@
   color: rgb(92, 187, 255);
   background-color: #fff;
   transition: all 500ms ease;
+  border: 3px solid rgb(92, 187, 255);
 }
 
 @media (max-width: 800px) {

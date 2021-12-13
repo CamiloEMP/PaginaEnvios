@@ -1,7 +1,3 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
 .title {
     grid-area: title;
     vertical-align: middle;
@@ -10,16 +6,16 @@
 }
 
 
-.Container{
+.Container {
     display: grid;
-    grid-template-areas: "title title" "labels information" ;
+    grid-template-areas: "title title""labels information";
     width: 90%;
     height: 700px;
     background: #8FD0FF;
     margin-left: 5%;
     margin-top: 100px;
     margin-bottom: 50px;
-    border-radius:10px;
+    border-radius: 10px;
     grid-template-rows: 20% 1fr 10px;
     grid-template-columns: 30% 2fr;
 }
@@ -33,26 +29,27 @@
     justify-content: space-between;
 }
 
-.title h1{
+.title h1 {
     height: 100%;
     text-align: center;
 }
 
-.labels{
+.labels {
     display: grid;
     grid-template-rows: repeat(9, 1fr);
     text-align: right;
 }
 
 
-.information{
+.information {
     display: grid;
     grid-template-rows: repeat(9, 1fr);
     text-align: left;
     margin-left: 30px;
 
 }
-.Container .information input{
+
+.Container .information input {
     width: 20%;
     height: 25px;
     border-radius: 20px;
@@ -61,7 +58,7 @@
     justify-content: space-between;
 }
 
-.Container .btnGenerarGuia{
+.Container .btnGenerarGuia {
     width: 20%;
     height: 37px;
     left: 534px;
@@ -74,17 +71,18 @@
     bottom: 10px;
 }
 
-.Container .btnGenerarGuia:hover{
+.Container .btnGenerarGuia:hover {
     background-color: white;
     border: 2px solid #2097F6;
     color: black;
     transition: 0.2s;
 }
+
 .Container .btnGenerarGuia:active {
     transform: translateY(4px);
 }
 
-.C-P  .inputDimensiones{
+.C-P .inputDimensiones {
     position: relative;
     border-radius: 20px;
     width: 50px;
@@ -95,10 +93,7 @@
 
 }
 
-.btnbtnAsegurado{
+.btnbtnAsegurado {
     margin: 0;
     margin-left: 0px;
 }
-
-
-

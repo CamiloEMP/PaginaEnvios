@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import "./Modal.css"
-export const Login = ({ children }) => {
+export const Login = ({children}) => {
   return ReactDOM.createPortal(
     <div className="Modal-background">
       {children}

@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  margin: 0;
-  padding: 0;
-}
+
 /* Contenedor */
 .container-e-2 {
   width: 400px;
@@ -62,11 +53,11 @@ body {
   font-weight: bold;
 }
 /* Haz el css de un button con hover */
-button a {
+.button-entregas a {
   text-decoration: none;
   color: #fff;
 }
-button {
+.button-entregas {
   width: 100%;
   height: 40px;
   background-color: #8fd0ff;
@@ -78,11 +69,11 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
-button:hover {
+.button-entregas:hover {
   background-color: #fff;
   color: #8fd0ff;
 }
-a:hover {
+.button-entregas a:hover {
   background-color: #fff;
   color: #8fd0ff;
 }
