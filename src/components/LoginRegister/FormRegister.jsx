@@ -2,11 +2,12 @@ import "./FormLog_Reg.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 const FormRegister = () => {
-  const { closeRegister, expresionesRegulares, validationEmail } = useContext(Context);
+  const navigate = useNavigate();
+  const { closeRegister, validationForm } = useContext(Context);
   return (
-    <>
       <Formik
         initialValues={{
           name: "",
@@ -16,21 +17,16 @@ const FormRegister = () => {
         }}
         validate={(values) => {
           let errores = {};
-          if (!values.name) {
-            errores.name = "Ingresa un nombre";
-          } else if (!expresionesRegulares.nombre.test(values.name)) {
-            errores.name = "El nombre solo puede tener letras y espacios";
-          }
-          validationEmail(values, errores)
+          validationForm(values, errores);
           return errores;
         }}
-        onSubmit={(values) => {
-          console.log(values);
-          console.log("formulario enviado");
+        onSubmit={(values, {resetForm}) => {
+          resetForm();
+          navigate('/home-user-intern')
         }}
       >
-        {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-          <form className="Form" onSubmit={handleSubmit}>
+        {({ errors }) => (
+          <Form className="Form">
             <button onClick={closeRegister} className="Form-close">
               <IoCloseCircleOutline className="icon-close" />
             </button>
@@ -38,64 +34,71 @@ const FormRegister = () => {
             <label htmlFor="name" className="Form-label">
               Nombre
             </label>
-            <input
+            <Field
               type="text"
               id="name"
               name="name"
               className="Form-input"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
             />
-            <span className="Form-error-input">{(touched.name && errors.name) || ""}</span>
+            <ErrorMessage
+              name="name"
+              component={() => (
+                <span className="Form-error-input">{errors.name}</span>
+              )}
+            />
             <label htmlFor="email" className="Form-label">
               Email
             </label>
-            <input
+            <Field
               type="email"
               id="email"
               name="email"
               className="Form-input"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
             />
-            <span className="Form-error-input">{(touched.email && errors.email) || ""}</span>
+            <ErrorMessage
+              name="email"
+              component={() => (
+                <span className="Form-error-input">{errors.email}</span>
+              )}
+            />
             <label htmlFor="password" className="Form-label">
               Contraseña
             </label>
-            <input
+            <Field
               type="password"
               id="password"
               name="password"
-              className="Form-input"
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
+              className={`Form-input`}
             />
-            <span className="Form-error-input">{(touched.password && errors.password) || ""}</span>
+            <ErrorMessage
+              name="password"
+              component={() => (
+                <span className="Form-error-input">{errors.password}</span>
+              )}
+            />
             <label htmlFor="confirmPass" className="Form-label">
               Confirmar contraseña
             </label>
-            <input
+            <Field
               type="password"
               id="confirmPass"
               name="confirmPass"
-              className="Form-input"
-              value={values.confirmPass}
-              onChange={handleChange}
-              onBlur={handleBlur}
+              className={`Form-input`}
             />
-            <span className="Form-error-input">{(touched.confirmPass && errors.confirmPass) || ""}</span>
+            <ErrorMessage
+              name="confirmPass"
+              component={() => (
+                <span className="Form-error-input">{errors.confirmPass}</span>
+              )}
+            />
             <div className="Form-container-btn">
               <button className="Form-btn" type="submit">
                 Sign up
               </button>
             </div>
-          </form>
+          </Form>
         )}
       </Formik>
-    </>
   );
 };
 
