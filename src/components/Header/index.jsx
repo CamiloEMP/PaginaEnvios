@@ -23,7 +23,7 @@ export const Header = () => {
           <Link to="/" className="path-UIP">
             Username
           </Link>
-          <button>Log Out</button>
+          <button>Log out</button>
         </div>
       </header>
   );

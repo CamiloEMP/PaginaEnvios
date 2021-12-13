@@ -13,7 +13,7 @@ const FormLogin = () => {
 
   return (
     <form onClick={onSubmitLogin} className="Form">
-      <button onClick={closeLogin} className="Form-close">
+      <button onClick={closeLogin} className="Form-close"> 
         <IoCloseCircleOutline className="icon-close" />
       </button>
       <h3>DeliveryXpress</h3>
