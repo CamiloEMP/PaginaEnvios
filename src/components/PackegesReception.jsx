@@ -1,7 +1,11 @@
 import "../styles/PackegesReception.css"
 import { Header } from "./Header";
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { useState } from "react";
+
 
 export const PackegesReception = () => {
+    const [guiaGenerada, limpiarForm] = useState(false);
     return (
         <>
             <Header> </Header>
@@ -10,7 +14,7 @@ export const PackegesReception = () => {
                     <h1> Recepción de paquetes</h1>
                 </div>
                 <div className="labels">
-                    <label>Dimensiones (cm): </label>
+                    <label >Dimensiones (cm): </label>
                     <label> Peso (kg) </label>
                     <label> Valor declarado </label>
                     <label> Ciudad de destino </label>
@@ -22,33 +26,218 @@ export const PackegesReception = () => {
                     <label> Total a pagar </label>
                     <label>Descripción del contenido</label>
                 </div>
-                <div className="information">
-                    <div>
-                        <label> Ancho </label>  <input type="text" id="PackageDimensionsAncho" name="PackageDimensionsAncho" className="inputDimensiones"></input>
-                        <label> Alto </label>  <input type="text" id="PackageDimensionsAlto" name="PackageDimensionsAlto" className="inputDimensiones"></input>
-                        <label> Largo </label> <input type="text" id="PackageDimensionsLargo" name="PackageDimensionsLargo" className="inputDimensiones"></input>
-                    </div>
-                    <input type="text" id="weightP" name="weightP" />
-                    <input type="text" id="ValorDeclarado" name="ValorDeclarado" />
-                    <input type="text" id="CiudadDestino" name="CiudadDestino" />
-                    <input type="text" id="DireccionEnvio" name="DireccionEnvio" />
-                    <input type="text" id="NombreRecibe" name="NombreRecibe" />
-                    <input type="text" id="ValorDeEnvio" name="ValorDeEnvio" disabled />
-                    <input type="text" id="ValorDeSeguro" name="ValorDeSeguro" disabled />
-                    
-                    <div className="AseguradoSN">
-                        <p>
-                            <label> Sí </label>
-                            <input type="radio" id="btnAseguradoYes" name="btnAsegurado" className="btnbtnAsegurado" value="Yes" ></input>
-                            <label> No </label>
-                            <input type="radio" id="btnAseguradoNo" name="btnAsegurado" className="btnbtnAsegurado" value="No" ></input>
-                        </p>
-                    </div>
+                <Formik
+                    initialValues={{
+                        PackageDimensionsAncho: '',
+                        PackageDimensionsAlto: '',
+                        PackageDimensionsLargo: '',
+                        weightP: '',
+                        valorDeclarado: '',
+                        CiudadDestino: '',
+                        DireccionEnvio: '',
+                        NombreRecibe: '',
+                        CostoEnvio: '',
+                        ValorSeguro: '',
+                        btnAsegurado: '',
+                        TotalPagar: '',
+                        PackageDescription: '',
+                    }}
 
-                    <input type="text" id="TotalPago" name="TotalPago" disabled />
-                    <input type="text" id="PackageDescription" name="PackageDescription" className="InputDescription" />
-                    <button id="GenerarGuia" name="GenerarGuia" className="btnGenerarGuia"> Generar guía </button>
-                </div>
+                    validate={(values) => {
+                        let errores = {};
+
+                        //Validacion dimensiones del paquete
+
+                        if (!values.PackageDimensionsAncho) {
+                            errores.PackageDimensionsAncho = "Ingrese el ancho del paquete"
+                        } else if (!/^([0-9])*$/.test(values.PackageDimensionsAncho)) {
+                            errores.PackageDimensionsAncho = "Solo se admiten valores numéricos"
+
+                        } else if (!values.PackageDimensionsAlto) {
+                            errores.PackageDimensionsAlto = "Ingrese el alto del paquete"
+                        } else if (!/^([0-9])*$/.test(values.PackageDimensionsAlto)) {
+                            errores.PackageDimensionsAlto = "Solo se admiten valores numéricos"
+
+                        } else if (!values.PackageDimensionsLargo) {
+                            errores.PackageDimensionsLargo = "Ingrese el largo del paquete"
+                        } else if (!/^([0-9])*$/.test(values.PackageDimensionsLargo)) {
+                            errores.PackageDimensionsLargo = "Solo se admiten valores numéricos"
+                        }
+
+
+                        //Validación peso del paquete
+                        if ((!values.weightP)) {
+                            errores.weightP = "Ingrese el peso del paquete"
+                        } else if (!/^([0-9])*$/.test(values.weightP)) {
+                            errores.weightP = "Solo se admiten valores numéricos"
+                        }
+
+                        //Validación del valor declarado
+                        if ((!values.valorDeclarado)) {
+                            errores.valorDeclarado = "Ingrese el valor declarado"
+                        } else if (!/^([0-9])*$/.test(values.valorDeclarado)) {
+                            errores.valorDeclarado = "Solo se admiten valores numéricos"
+                        }
+
+                        //Validación del precio de envío respecto a la ciudad
+                        //Validación del precio de envío respecto a la ciudad
+                        //Validación del precio de envío respecto a la ciudad
+
+                        //Validación ciudad de destino
+                        if ((!values.DireccionEnvio)) {
+                            errores.DireccionEnvio = "Ingrese una dirección de envío"
+                        }
+
+                        //Validación nombre de la persona que recibe
+                        if (!values.NombreRecibe) {
+                            errores.NombreRecibe = "Ingrese el nombre de la persona que recibe el paquete "
+                        } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.NombreRecibe)) {
+                            errores.NombreRecibe = "Solo se admite texto"
+                        }
+
+                        //Validación asegurado
+                        //Validación asegurado
+                        //Validación asegurado
+                        if (values.btnAsegurado){
+                            console.log(values.btnAsegurado)
+                        } 
+
+                        return errores;
+                    }}
+
+                    onSubmit={({ values, resetForm }) => {
+
+                        console.log("Guia generada");
+                        limpiarForm(true);
+                        setTimeout(() => limpiarForm(false), 8000);
+                    }}
+
+                >
+                    {({ errors }) => (
+
+                        <Form className="information">
+
+                            <div>
+                                <label> Ancho </label>  <Field type="text" id="PackageDimensionsAncho" name="PackageDimensionsAncho" className="inputDimensiones"></Field>
+                                <label> Alto </label>  <Field type="text" id="PackageDimensionsAlto" name="PackageDimensionsAlto" className="inputDimensiones"></Field>
+                                <label> Largo </label> <Field type="text" id="PackageDimensionsLargo" name="PackageDimensionsLargo" className="inputDimensiones"></Field>
+
+                                <ErrorMessage name="PackageDimensionsAncho" component={() => (<p className="ErrorPR">)
+                                    {errors.PackageDimensionsAncho}</p>)} />
+                                <ErrorMessage name="PackageDimensionsAlto" component={() => (<p className="ErrorPR">)
+                                    {errors.PackageDimensionsAlto}</p>)} />
+                                <ErrorMessage name="PackageDimensionsLargo" component={() => (<p className="ErrorPR">)
+                                    {errors.PackageDimensionsLargo}</p>)} />
+                            </div>
+
+                            <div>
+                                <Field type="text" id="weightP" name="weightP"></Field>
+                                <ErrorMessage name="weightP" component={() => (<p className="ErrorPR">)
+                                    {errors.weightP}</p>)} />
+                            </div>
+
+                            <div>
+                                <Field type="text" id="valorDeclarado" name="valorDeclarado"></Field>
+                                <ErrorMessage name="valorDeclarado" component={() => (<p className="ErrorPR">)
+                                    {errors.valorDeclarado}</p>)} />
+                            </div>
+
+                            <div>
+                                <Field type="text" id="CiudadDestino" name="CiudadDestino" as="select" className="CiudadDestino">
+                                    <option value="Arauca">Arauca</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Barranquilla ">Barranquilla </option>
+                                    <option value="Bogota">Bogotá</option>
+                                    <option value="Bucaramanga ">Bucaramanga</option>
+                                    <option value="Cali">Cali</option>
+                                    <option value="Cartagena">Cartagena</option>
+                                    <option value="Cucuta">Cúcuta </option>
+                                    <option value="Florencia">Florencia</option>
+                                    <option value="Ibague">Ibagué</option>
+                                    <option value="Leticia">Leticia </option>
+                                    <option value="Manizales">Manizales</option>
+                                    <option value="Medellin">Medellín</option>
+                                    <option value="Mitu">Mitú</option>
+                                    <option value="Mocoa">Mocoa</option>
+                                    <option value="Monteria">Montería</option>
+                                    <option value="Neiva">Neiva</option>
+                                    <option value="Pasto">Pasto</option>
+                                    <option value="Pereira">Pereira</option>
+                                    <option value="Popayan">Popayán</option>
+                                    <option value="PuertoCarreno">Puerto Carreño</option>
+                                    <option value="PuertoInirida">Puerto Inírida</option>
+                                    <option value="Quibdo">Quibdó </option>
+                                    <option value="Riohacha">Riohacha </option>
+                                    <option value="SanAndres ">San Andrés</option>
+                                    <option value="SanJosedelGuaviare">San José del Guaviare</option>
+                                    <option value="SantaMarta">Santa Marta </option>
+                                    <option value="Sincelejo">Sincelejo</option>
+                                    <option value="Tunja">Tunja</option>
+                                    <option value="Valledupar">Valledupar</option>
+                                    <option value="Villavicencio">Villavicencio</option>
+                                    <option value="Yopal">Yopal</option>
+                                </Field>
+                            </div>
+
+                            <div>
+                                <Field type="text" id="DireccionEnvio" name="DireccionEnvio"></Field>
+                                <ErrorMessage name="DireccionEnvio" component={() => (<p className="ErrorPR">)
+                                    {errors.DireccionEnvio}</p>)} />
+                            </div>
+
+                            <div>
+                                <Field type="text" id="NombreRecibe" name="NombreRecibe"></Field>
+                                <ErrorMessage name="NombreRecibe" component={() => (<p className="ErrorPR">)
+                                    {errors.NombreRecibe}</p>)} />
+
+                            </div>
+
+
+                            <div>
+                                <input type="text" id="ValorDeEnvio" name="ValorDeEnvio" disabled />
+                            </div>
+
+                            <div>
+                                <input type="text" id="ValorDeSeguro" name="ValorDeSeguro" disabled />
+                            </div>
+
+
+                            <div className="AseguradoSN" role="group">
+                                <p>
+                                    <label> Sí </label>
+                                    <Field 
+                                    type="radio" 
+                                    id="btnAseguradoYes" 
+                                    name="btnAsegurado" 
+                                    className="btnbtnAsegurado" 
+                                    value="Yes">
+                                    </Field>
+
+                                    <label> No </label>
+                                    <Field 
+                                    type="radio" 
+                                    id="btnAseguradoNo" 
+                                    name="btnAsegurado" 
+                                    className="btnbtnAsegurado" 
+                                    value="No" >
+                                    </Field>
+                                </p>
+                            </div>
+
+                            <div>
+                                <input type="text" id="TotalPago" name="TotalPago" disabled />
+                            </div>
+
+                            <div>
+                                <Field as="textarea" id="PackageDescription" name="PackageDescription"
+                                    className="InputDescription" placeholder="Ingrese una breve descripción del contenido del paquete (Opcional)"></Field>
+                            </div>
+
+                            <button type="submit" id="GenerarGuia" name="GenerarGuia" className="btnGenerarGuia"> Generar guía </button>
+                            {guiaGenerada && <p className="exitoPR">Tu paquete ahora será trasnportado por uno de nuestros operadores Delivery Xpress</p>}
+                        </Form>
+                    )}
+                </Formik>
             </div>
         </>
     )
