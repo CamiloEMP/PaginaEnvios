@@ -1,11 +1,12 @@
 import "../styles/PackegesReception.css"
 import { Header } from "./Header";
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field, ErrorMessage, useField } from 'formik'
 import { useState } from "react";
 
 
 export const PackegesReception = () => {
-    const [guiaGenerada, limpiarForm] = useState(false);
+    const [guiaGenerada, setLimpiarForm] = useState(false);
+
     return (
         <>
             <Header> </Header>
@@ -41,10 +42,13 @@ export const PackegesReception = () => {
                         btnAsegurado: '',
                         TotalPagar: '',
                         PackageDescription: '',
+
                     }}
 
                     validate={(values) => {
                         let errores = {};
+                        
+
 
                         //Validacion dimensiones del paquete
 
@@ -72,6 +76,8 @@ export const PackegesReception = () => {
                             errores.weightP = "Solo se admiten valores numéricos"
                         }
 
+
+
                         //Validación del valor declarado
                         if ((!values.valorDeclarado)) {
                             errores.valorDeclarado = "Ingrese el valor declarado"
@@ -95,25 +101,53 @@ export const PackegesReception = () => {
                             errores.NombreRecibe = "Solo se admite texto"
                         }
 
+                        //
+                        //Costo de envío
+                        //Y
                         //Validación asegurado
-                        //Validación asegurado
-                        //Validación asegurado
-                        if (values.btnAsegurado){
-                            console.log(values.btnAsegurado)
-                        } 
+                        let peso = parseInt(values.weightP)
+                        let ancho = parseInt(values.PackageDimensionsAncho)
+                        let alto = parseInt(values.PackageDimensionsAlto)
+                        let largo = parseInt(values.PackageDimensionsLargo)
+                        let volumen = ancho * alto * largo
+                        if (values.weightP && values.PackageDimensionsAncho
+                            && values.PackageDimensionsAlto && values.PackageDimensionsLargo
+                            && values.valorDeclarado) {
+                            if (volumen > 216000 && peso > 3) {
+                                values.CostoEnvio = Math.round(8500 + volumen * .02 + peso * .7)
+                                values.ValorSeguro = Math.round(values.CostoEnvio * .10 + values.valorDeclarado*.05) 
+                            } else {
+                                values.CostoEnvio = 8500
+                                values.ValorSeguro = Math.round(values.CostoEnvio * .10)
+                            }
+
+                        }
+
+
+
+                        //Total pagar 
+                        if (values.btnAsegurado === "Yes") {
+                            values.TotalPagar = values.ValorSeguro + values.CostoEnvio
+                        } else if (values.btnAsegurado === "No") {
+                            values.TotalPagar = values.CostoEnvio
+                        }
 
                         return errores;
                     }}
 
-                    onSubmit={({ values, resetForm }) => {
+                    //Valor Seguro
 
-                        console.log("Guia generada");
-                        limpiarForm(true);
-                        setTimeout(() => limpiarForm(false), 8000);
+
+                    onSubmit={(values, { resetForm }) => {
+                        setLimpiarForm(true);
+                        console.log(values);
+                        resetForm();
+                        console.log("formulario enviado");
+                        setTimeout(() => setLimpiarForm(false), 5000);
                     }}
 
                 >
-                    {({ errors }) => (
+                    {({ errors, values }) => (
 
                         <Form className="information">
 
@@ -137,7 +171,7 @@ export const PackegesReception = () => {
                             </div>
 
                             <div>
-                                <Field type="text" id="valorDeclarado" name="valorDeclarado"></Field>
+                                <Field type="text" id="valorDeclarado" name="valorDeclarado" placeholder="$"></Field>
                                 <ErrorMessage name="valorDeclarado" component={() => (<p className="ErrorPR">)
                                     {errors.valorDeclarado}</p>)} />
                             </div>
@@ -194,38 +228,41 @@ export const PackegesReception = () => {
 
 
                             <div>
-                                <input type="text" id="ValorDeEnvio" name="ValorDeEnvio" disabled />
+                                <input type="text" id="ValorDeEnvio" name="ValorDeEnvio"
+                                    disabled placeholder={"$"+values.CostoEnvio} />
                             </div>
 
                             <div>
-                                <input type="text" id="ValorDeSeguro" name="ValorDeSeguro" disabled />
+                                <input type="text" id="ValorDeSeguro" name="ValorDeSeguro" disabled
+                                    placeholder={"$"+values.ValorSeguro} />
                             </div>
 
 
                             <div className="AseguradoSN" role="group">
                                 <p>
                                     <label> Sí </label>
-                                    <Field 
-                                    type="radio" 
-                                    id="btnAseguradoYes" 
-                                    name="btnAsegurado" 
-                                    className="btnbtnAsegurado" 
-                                    value="Yes">
+                                    <Field
+                                        type="radio"
+                                        id="btnAseguradoYes"
+                                        name="btnAsegurado"
+                                        className="btnbtnAsegurado"
+                                        value="Yes">
                                     </Field>
 
                                     <label> No </label>
-                                    <Field 
-                                    type="radio" 
-                                    id="btnAseguradoNo" 
-                                    name="btnAsegurado" 
-                                    className="btnbtnAsegurado" 
-                                    value="No" >
+                                    <Field
+                                        type="radio"
+                                        id="btnAseguradoNo"
+                                        name="btnAsegurado"
+                                        className="btnbtnAsegurado"
+                                        value="No" >
                                     </Field>
                                 </p>
                             </div>
 
                             <div>
-                                <input type="text" id="TotalPago" name="TotalPago" disabled />
+                                <input type="text" id="TotalPago" name="TotalPago" disabled 
+                                 placeholder={"$"+values.TotalPagar}/>
                             </div>
 
                             <div>
