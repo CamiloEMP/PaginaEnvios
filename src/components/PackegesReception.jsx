@@ -1,6 +1,6 @@
 import "../styles/PackegesReception.css"
 import { Header } from "./Header";
-import { Formik, Form, Field, ErrorMessage, useField } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useState } from "react";
 
 
