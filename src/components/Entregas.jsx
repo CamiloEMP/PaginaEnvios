@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Header } from "./Header";
 import Group169 from "../img/Group169.png";
 import "../styles/Entregados1.css";

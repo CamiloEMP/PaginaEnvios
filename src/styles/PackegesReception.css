@@ -14,7 +14,7 @@
     display: grid;
     grid-template-areas: "title title" "labels information" ;
     width: 90%;
-    height: 920px;
+    height: 980px;
     background: #8FD0FF;
     margin-left: 5%;
     margin-top: 0px;
@@ -35,6 +35,7 @@
     overflow-y: scroll;
     resize:none;
     border-radius: 20px;
+    outline-color: #2097F6;
 }
 .Container .InputDescription::-webkit-scrollbar {
     background-color: #8FD0FF;
@@ -70,6 +71,7 @@
     border-color: white;
     text-indent: 10px;
     justify-content: space-between;
+    outline-color: #2097F6;
 }
 
 .Container .btnGenerarGuia{
@@ -119,3 +121,26 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.CiudadDestino{
+    outline-color: #2097F6;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.CiudadDestino::-webkit-scrollbar{
+    border-radius: 50px;
+    width: 0px;
+    
+}
+
+.ErrorPR{
+    color: red;
+    font-size: 14px;
+}
+
+.exitoPR{
+    color: #02a802;
+    font-size: 14px;
+    font-weight: bold;
+}
+
