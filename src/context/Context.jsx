@@ -83,6 +83,18 @@ const GlobalContext = ({ children }) => {
     }
   };
 
+  const CONFIG_METHOD_POST = (data) => {
+    return {
+      mode: "no-cors",
+      method: "post",
+      headers: {
+        Aceept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+  };
+
   return (
     <Context.Provider
       value={{
@@ -99,6 +111,7 @@ const GlobalContext = ({ children }) => {
         SearchNameDestinatary,
         expresionesRegulares,
         validationForm,
+        CONFIG_METHOD_POST,
       }}
     >
       {children}
