@@ -20,6 +20,7 @@
   position: absolute;
   top: 8px;
   left: 300px;
+  color: rgb(92, 187, 255);
 }
 
 .Form-close {
@@ -28,7 +29,7 @@
 }
 
 .Flogin-img-user {
-  background-image: url("../img/User.png");
+  background-image: url("../../img/User.png");
   width: 130px;
   height: 130px;
   background-repeat: no-repeat;
@@ -49,7 +50,7 @@
   height: 35px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   border: 1px solid rgba(0, 0, 0, 0.384);
   border-radius: 20px;
   outline: none;
@@ -64,7 +65,7 @@
 .Form-btn {
   width: 130px;
   height: 40px;
-  border: none;
+  border: 3px solid hsla(205, 100%, 68%, 1);
   background-color: hsla(205, 100%, 68%, 1);
   color: #fff;
   font-size: 24px;
@@ -72,6 +73,23 @@
   border-radius: 20px;
 }
 
+.Form-btn:hover {
+  transition: all 500ms ease;
+  background-color: #fff;
+  border: 3px solid hsla(205, 100%, 68%, 1);
+  color: hsla(205, 100%, 68%, 1);
+}
+
+
 .FRegistro-title {
   margin-bottom: 30px;
+}
+
+.Form-error-input {
+  color: red;
+  text-align: initial;
+  margin-bottom: 5px;
+  font-size: 12px;
+  padding-left: 5px;
+  font-weight: 700;
 }

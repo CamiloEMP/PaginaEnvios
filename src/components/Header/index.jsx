@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
       <header className="header-UIP">
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo" />
         <div className="IoMenu-container">
           <IoMenu className="IoMenu" onClick={onOpenMenu} />
           {!!openMenu && <OpenMenuMobile />}
@@ -23,7 +23,7 @@ export const Header = () => {
           <Link to="/" className="path-UIP">
             Username
           </Link>
-          <button>Log Out</button>
+          <button>Log out</button>
         </div>
       </header>
   );

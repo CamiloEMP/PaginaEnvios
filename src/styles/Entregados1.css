@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+
 /* Contenedor */
 .contenedor-Entregas {
   width: 80%;
@@ -29,6 +24,7 @@
   margin: 0 auto;
   padding: 10px 0;
 }
+
 /* Tarjetas */
 .contenedor-tarjetas-Entrega {
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -45,6 +41,7 @@
   text-decoration: none;
   color: #ff9490;
 }
+
 /* Hover para Descripcion-e a */
 .Descripcion-Entregas a:hover {
   text-decoration: none;
@@ -53,16 +50,19 @@
 .imagen-tarjeta-Entregas {
   margin: 0 10px;
 }
+
 @media screen and (min-width: 540px) {
   .contenedor-tarjetas-Entrega {
     font-size: 13px;
   }
 }
+
 @media screen and (min-width: 600px) {
   .contenedor-tarjetas-Entrega {
     font-size: 14px;
   }
 }
+
 @media screen and (min-width: 660px) {
   .contenedor-tarjetas-Entrega {
     font-size: 15px;
@@ -73,6 +73,7 @@
     margin: 0 30px 0;
   }
 }
+
 @media screen and (min-width: 1300px) {
   .grande-Entregas {
     display: flex;

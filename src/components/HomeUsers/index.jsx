@@ -6,8 +6,8 @@ import { IoMenu } from "react-icons/io5";
 import { OpenMenuMobile } from "../../Modals/OpenMenuMobile";
 import { Context } from "../../context/Context";
 import { useContext } from "react";
-import { FormLogin } from "../FormLogin";
-import { FormRegister } from "../FormRegister";
+import { FormLogin } from "../LoginRegister/FormLogin";
+import { FormRegister } from "../LoginRegister/FormRegister";
 import { Login } from "../../Modals/Login";
 import { Register } from "../../Modals/Register";
 
@@ -16,14 +16,13 @@ export const HomeUsers = () => {
   return (
     <>
       <header className="header-UIP">
-        <img src={logo} alt="" style={{ width: "340px", margin: "30px 0 0 140px"}} />
+        <img src={logo} alt="" style={{ width: "340px", margin: "20px 0 0 140px"}} />
         <div className="IoMenu-container">
           <IoMenu className="IoMenu" onClick={onOpenMenu} />
           {!!openMenu && <OpenMenuMobile />}
         </div>
         <div className="UserMenu-UIP" style={{ width: "280px" }}>
-          <button
-            className="btn-outline-primary"
+        <button
             onClick={onClickBtn}
             style={{ width: "130px" }}
           >
@@ -35,7 +34,6 @@ export const HomeUsers = () => {
             </Login>
           )}
           <button
-            className="btn-outline-primary"
             onClick={onClickBtn}
             style={{ width: "130px" }}
           >

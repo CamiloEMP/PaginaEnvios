@@ -2,7 +2,7 @@ import "../styles/ScheduledShipments2.css";
 import { Header } from "./Header"
 import img1 from "../img/Tabla.png"
 
-export const ScheduledShipments2 = ({ props }) => {
+export const ScheduledShipments = ({ props }) => {
     return (
         <>
         <Header> </Header>

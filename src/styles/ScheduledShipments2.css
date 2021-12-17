@@ -1,60 +1,56 @@
-*{
-    margin: 0px;
-    padding: 0px;
+.C-P .Title{
+    grid-area: Title;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+
 }
+
 
 .C-P {
     display: grid;
-    grid-template-areas: "Title Title" "Labels Information";
+    grid-template-areas: "Title Title""Labels Information";
     width: 90%;
     height: 650px;
     background: #8FD0FF;
     margin-left: 5%;
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 50px;
-    border-radius:10px;
+    border-radius: 10px;
     grid-template-rows: 20% 1fr 10px;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 30% 2fr;
     
-}
-
-
-.C-P .Title h1{
-    grid-area: Title;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    width: 90%;
-
 }
 
 .C-P .Labels{
     grid-area: Labels;
     position: relative;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background-color: #fff;
     border-radius: 50%;
     top: 100px;
-    margin-left: 90px;
+    margin-left: 140px;
 }
 
 .Labels img:first-child {
     position: absolute;
-    top: 15px;
-    left: 20px;
+    top: 20px;
+    left: 30px;
 }
 
-.C-P .Information{
-    grid-area: Information; 
+.C-P .Information {
+    grid-area: Information;
     margin-bottom: 10px;
 }
 
-.PersonaQueRecibe{
+.PersonaQueRecibe {
     margin-top: 50px;
-    color: blue;
+    color: black;
+    font-weight: bold;
 }
-.C-P  .btnTrack{
+
+.C-P .btnTrack {
     width: 181px;
     height: 37px;
     left: 534px;
@@ -65,17 +61,22 @@
     cursor: pointer;
     margin: 0;
     bottom: 10px;
+    color: #fff;
+
 }
 
-.C-P .btnTrack:hover{
+.C-P .btnTrack:hover {
     background-color: white;
     border: 2px solid #2097F6;
     transition: 0.2s;
+    color: #2097F6;
 }
+
 .C-P .btnTrack:active {
     transform: translateY(4px);
 }
-.C-P  .btnEnvios{
+
+.C-P .btnEnvios {
     width: 280px;
     height: 37px;
     left: 534px;
@@ -86,14 +87,16 @@
     cursor: pointer;
     margin: 0;
     bottom: 10px;
+    color: #fff; 
 }
 
-.C-P .btnEnvios:hover{
+.C-P .btnEnvios:hover {
     background-color: white;
     border: 2px solid #2097F6;
     transition: 0.2s;
+    color: #2097F6;
 }
+
 .C-P .btnEnvios:active {
     transform: translateY(4px);
 }
-
