@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/ScheduledShipments2" element={<ScheduledShipments2 />} />
           <Route exact path="/R200" element={<R200 />} />
           <Route exact path="/Entregas" element={<Entregas />} />
-          <Route exact path="/Entregas2" element={<Entregas2 />} />
+          {/* <Route exact path="/Entregas2" element={<Entregas2 />} /> */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </GlobalContext>

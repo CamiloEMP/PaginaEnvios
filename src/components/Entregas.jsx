@@ -8,27 +8,27 @@ export const Entregas = () => {
       <>
       <Header />
         <div className="container1">
-            <div className="container-Entregas">
-                <div className="titulo">
+            <div className="contenedor-Entregas">
+                <div className="titulo-Entregas">
                     <p>Envios entregados</p>
                 </div>
-                <div className="grande">
-                    <div ClasName="contenedor-tarjetas-Entrega">
-                        <div className="imagen-e">
+                <div className="grande-Entregas">
+                    <div className="contenedor-tarjetas-Entrega">
+                        <div className="imagen-tarjeta-Entregas">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
-                        <div className="Descripcion-e">
+                        <div className="Descripcion-Entregas">
                             <p>Número de guía: 12455QJE</p>
                             <p>Dirección de envío: Transversak 17 # 66 - 87</p>
                             <p>Nombre: Sussan López</p>
                             {/* <Link to="">Ver más...</Link> */}
                         </div>  
                     </div>
-                    <div classNama="contenedor-t">
-                        <div className="imagen-e">
+                    <div className="contenedor-tarjetas-Entrega">
+                        <div className="imagen-tarjeta-Entregas">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
-                        <div className="Descripcion-e">
+                        <div className="Descripcion-Entregas">
                             <p>Número de guía: 94321PRE</p>
                             <p>Dirección de envío: Calle  15 # 18 - 19  Sur</p>
                             <p>Nombre: Juanita Alimaña</p>

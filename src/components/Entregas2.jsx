@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-/* import Group169 from "../img/Group169"; */
+import Group169 from "../img/Group169.png";
 import "../styles/Entregados2.css";
 export const Entregas2 = () => {
     return (
@@ -11,7 +11,7 @@ export const Entregas2 = () => {
                     <p className ="subtitulo-2">12455QJE </p>
                 </div>
                     <div className="contenedor-t-2">
-                   {/*  <img src= {Group169} alt="#"/>  */}
+                    <img src= {Group169} alt="Imagen"/>
                     <div className="Descripcion-e-2">
                         <p>Número de guía: 12455QJE</p>
                         <p>Dirección de envío: Transversak 17 # 66 - 87</p>
@@ -23,7 +23,11 @@ export const Entregas2 = () => {
                         <p>Nombre: Sussan López</p>
                         <p>Número de identificación: 982448679</p>
                     </div>  
-                    <button><Link to="/home-user-intern">Ver todos los envios</Link></button>
+                    <Link to="/Entregas">
+                        <button>
+                            Ver todos los envios
+                        </button>
+                    </Link>
                     </div>
                 </div>
         </div>
