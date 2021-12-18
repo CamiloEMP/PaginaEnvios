@@ -1,26 +1,50 @@
+import "./FormLog_Reg.css";
+import { IoCloseCircleOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { IoCloseCircleOutline } from "react-icons/io5";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import "./FormLog_Reg.css";
-
+import { useNavigate } from 'react-router';
+import axios from "axios"
 const FormLogin = () => {
-  const { closeLogin, validationForm } = useContext(Context);
+  const navigate = useNavigate();
+  const { closeLogin, expresionesRegulares, setUserError } =
+    useContext(Context);
   return (
     <Formik
       initialValues={{
-        email: "",
-        password: "",
+        emailLogin: "",
+        passwordLogin: "",
       }}
       validate={(values) => {
         let errores = {};
-        validationForm(values, errores);
+        if (!values.emailLogin) errores.emailLogin = "Ingresa un correo";
+        else if (!expresionesRegulares.correo.test(values.emailLogin))
+          errores.emailLogin =
+            "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo";
+
+        if (!values.passwordLogin)
+          errores.passwordLogin = "Ingresa una contraseña";
+        else if (!expresionesRegulares.password.test(values.passwordLogin))
+          errores.passwordLogin = "La contraseña debe tener mas de 6 digitos";
+
         return errores;
       }}
-      onSubmit={(values, {resetForm}) => {
+      onSubmit={(values, { resetForm }) => {
         resetForm();
-        console.log(values);
-        console.log("formulario enviado");
+        const { emailLogin, passwordLogin } = values;
+        axios
+          .post("http://localhost:8080/api/login", {
+            emailLogin,
+            passwordLogin,
+          })
+          .then((res) => {
+            if (res.data && res.data.tipoUser === "normal") {
+              navigate("/home-user-extern")
+            }
+          }).catch(() => {
+            setUserError(true);
+            closeLogin();
+          });
       }}
     >
       {({ errors }) => (
@@ -35,33 +59,35 @@ const FormLogin = () => {
           </label>
           <Field
             type="email"
-            id="email"
-            name="email"
+            id="emailLogin"
+            name="emailLogin"
             className="Form-input"
           />
           <ErrorMessage
-              name="email"
-              component={() => (
-                <span className="Form-error-input">{errors.email}</span>
-              )}
-            />
-          <label htmlFor="password" className="Form-label">
+            name="emailLogin"
+            component={() => (
+              <span className="Form-error-input">{errors.emailLogin}</span>
+            )}
+          />
+          <label htmlFor="passwordLogin" className="Form-label">
             Password
           </label>
           <Field
             type="password"
-            id="password"
-            name="password"
+            id="passwordLogin"
+            name="passwordLogin"
             className="Form-input"
           />
           <ErrorMessage
-              name="password"
-              component={() => (
-                <span className="Form-error-input">{errors.password}</span>
-              )}
-            />
+            name="passwordLogin"
+            component={() => (
+              <span className="Form-error-input">{errors.passwordLogin}</span>
+            )}
+          />
           <div className="Form-container-btn">
-            <button className="Form-btn">Sign in</button>
+            <button className="Form-btn" type="submit">
+              Sign in
+            </button>
           </div>
         </Form>
       )}

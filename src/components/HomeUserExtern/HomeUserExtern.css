@@ -1,0 +1,72 @@
+.main-extern-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.title-person-home {
+  margin: 100px auto 0;
+  border-bottom: 3px solid #8FD0FF;
+  width: 1000px;
+  text-align: center;
+}
+
+.title-person-home {
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+
+.main-extern-container .container-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  padding: 0 50px;
+  height: 200px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.main-extern-container .container-card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 300ms ease;
+}
+
+
+.main-extern-container .container-card .container-img img:last-child {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.main-extern-container .container-card .container-img img:first-child {
+  width: 22px;
+  position: absolute;
+  z-index: 1;
+  left: 104px;
+  top: 18px;
+}
+
+.main-extern-container .container-card p {
+  margin: 0;
+}
+
+.card1 {
+  position: relative;
+  background-color: #8FD0FF;
+}
+
+.card2 {
+  position: relative;
+  background-color: #FF9490;
+}
+
+.card3 {
+  position: relative;
+  background-color: #8FFFEB;
+}

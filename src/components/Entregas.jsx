@@ -12,7 +12,7 @@ export const Entregas = () => {
                     <p>Envios entregados</p>
                 </div>
                 <div className="grande">
-                    <div ClasName="contenedor-tarjetas-Entrega">
+                    <div className="contenedor-tarjetas-Entrega">
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
@@ -23,7 +23,7 @@ export const Entregas = () => {
                             {/* <Link to="">Ver más...</Link> */}
                         </div>  
                     </div>
-                    <div classNama="contenedor-t">
+                    <div className="contenedor-t">
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>

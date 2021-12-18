@@ -9,6 +9,7 @@ import { GlobalContext } from "./context/Context";
 import { ScheduledShipments} from "./components/ScheduledShipments";
 import { Home } from "./components/Home";
 import { HomeUsers } from "./components/HomeUsers";
+import { HomeUserExtern } from "./components/HomeUserExtern";
 import { PackegesReception } from "./components/PackegesReception";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <GlobalContext>
         <Routes>
           <Route exact path="/" element={<HomeUsers/>} />
+          <Route exact path="/home-user-extern" element={<HomeUserExtern />} />
           <Route exact path="/home-user-intern" element={<Home />} />
           <Route exact path="/user-extern" element={<UExternPackages />} />
           <Route exact path="/user-intern" element={<UInternPackages />} />
