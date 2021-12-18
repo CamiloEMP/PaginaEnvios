@@ -12,20 +12,37 @@ import { Login } from "../../Modals/Login";
 import { Register } from "../../Modals/Register";
 
 export const HomeUsers = () => {
-  const { openMenu, onOpenMenu, openModal, onClickBtn } = useContext(Context);
+  const {
+    openMenu,
+    onOpenMenu,
+    openModal,
+    onClickBtn,
+    userError,
+    registerCorrect,
+  } = useContext(Context);
+
   return (
     <>
+      {userError && (
+        <div className="alert alert-danger">Correo o contraseña invalido</div>
+      )}
+      {registerCorrect && (
+        <div className="alert alert-success">
+          Inicia sesión para comprobar tus datos
+        </div>
+      )}
       <header className="header-UIP">
-        <img src={logo} alt="" style={{ width: "340px", margin: "20px 0 0 140px"}} />
+        <img
+          src={logo}
+          alt=""
+          style={{ width: "340px", margin: "20px 0 0 140px" }}
+        />
         <div className="IoMenu-container">
           <IoMenu className="IoMenu" onClick={onOpenMenu} />
           {!!openMenu && <OpenMenuMobile />}
         </div>
         <div className="UserMenu-UIP" style={{ width: "280px" }}>
-        <button
-            onClick={onClickBtn}
-            style={{ width: "130px" }}
-          >
+          <button onClick={onClickBtn} style={{ width: "130px" }}>
             Login
           </button>
           {!!openModal.login && (
@@ -33,10 +50,7 @@ export const HomeUsers = () => {
               <FormLogin />
             </Login>
           )}
-          <button
-            onClick={onClickBtn}
-            style={{ width: "130px" }}
-          >
+          <button onClick={onClickBtn} style={{ width: "130px" }}>
             Sign up
           </button>
           {!!openModal.signUp && (

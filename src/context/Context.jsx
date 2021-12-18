@@ -13,6 +13,8 @@ const GlobalContext = ({ children }) => {
     signUp: false,
   });
 
+  const [userError, setUserError] = useState(false);
+  const [registerCorrect, setRegisterCorrect] = useState(false)
   const closeLogin = () => {
     setOpenModal({ ...openModal, login: false });
   };
@@ -25,6 +27,8 @@ const GlobalContext = ({ children }) => {
     event.target.textContent === "Login"
       ? setOpenModal({ ...openModal, login: true })
       : setOpenModal({ ...openModal, signUp: true });
+    setUserError(false)
+    setRegisterCorrect(false)
   };
 
   const [searchValue, setSearchValue] = useState("");
@@ -55,7 +59,7 @@ const GlobalContext = ({ children }) => {
   };
 
   const expresionesRegulares = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    usuario: /^[a-zA-Z0-9\\]{4,16}$/,
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     password: /^.{6,12}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -83,18 +87,6 @@ const GlobalContext = ({ children }) => {
     }
   };
 
-  const CONFIG_METHOD_POST = (data) => {
-    return {
-      mode: "no-cors",
-      method: "post",
-      headers: {
-        Aceept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
-  };
-
   return (
     <Context.Provider
       value={{
@@ -111,7 +103,10 @@ const GlobalContext = ({ children }) => {
         SearchNameDestinatary,
         expresionesRegulares,
         validationForm,
-        CONFIG_METHOD_POST,
+        userError,
+        setUserError,
+        registerCorrect,
+        setRegisterCorrect,
       }}
     >
       {children}

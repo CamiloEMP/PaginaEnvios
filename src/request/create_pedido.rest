@@ -1,0 +1,12 @@
+POST http://localhost:8080/api/pedido HTTP/1.1
+content-type: application/json
+
+{
+  "direccion": "calle 41 sur",
+  "lugarDestino": "Bogota",
+  "lugarOrigen": "Bogota",
+  "destinatario": "Pepito",
+  "estado": "Cancelar",
+  "codigo": "54123",
+  "idUsuario": "61bd4ef60d13fd6b1c94350c"
+}

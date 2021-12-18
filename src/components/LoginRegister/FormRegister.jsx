@@ -2,12 +2,10 @@ import "./FormLog_Reg.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 const FormRegister = () => {
-  const navigate = useNavigate();
-  const { closeRegister, validationForm } = useContext(Context);
+  const { closeRegister, validationForm, setUserError, setRegisterCorrect } = useContext(Context);
   return (
     <Formik
       initialValues={{
@@ -24,12 +22,18 @@ const FormRegister = () => {
       onSubmit={(values, { resetForm }) => {
         resetForm();
         const { name, email, password } = values;
-        console.log("Antes del fetch");
         axios
           .post("http://localhost:8080/api/register", { name, email, password })
           .then((res) => {
-            if (res.status === 200)  navigate("/home-user-intern")
+            if (res.status === 200) {
+              setRegisterCorrect(true);
+              closeRegister();
+            }
           })
+          .catch(() => {
+            setUserError(true);
+            closeRegister();
+          });
       }}
     >
       {({ errors }) => (

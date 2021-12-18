@@ -11,9 +11,9 @@ export const Entregas = () => {
                 <div className="titulo-Entregas">
                     <p>Envios entregados</p>
                 </div>
-                <div className="grande-Entregas">
+                <div className="grande">
                     <div className="contenedor-tarjetas-Entrega">
-                        <div className="imagen-tarjeta-Entregas">
+                        <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
                         <div className="Descripcion-Entregas">
@@ -23,8 +23,8 @@ export const Entregas = () => {
                             {/* <Link to="">Ver más...</Link> */}
                         </div>  
                     </div>
-                    <div className="contenedor-tarjetas-Entrega">
-                        <div className="imagen-tarjeta-Entregas">
+                    <div className="contenedor-t">
+                        <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
                         <div className="Descripcion-Entregas">
