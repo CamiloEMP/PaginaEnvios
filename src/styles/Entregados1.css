@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 
 /* Contenedor */
-.container-e {
+.contenedor-Entregas {
   width: 80%;
   margin: 5% auto;
   padding: 0;
@@ -11,8 +11,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
-.titulo {
+.titulo-Entregas {
   font-size: 26px;
   font-weight: 600;
   width: 100%;
@@ -21,14 +20,13 @@
   margin: 0 0 20px;
   padding: 0;
 }
-
-.titulo p {
+.titulo-Entregas p {
   margin: 0 auto;
   padding: 10px 0;
 }
 
 /* Tarjetas */
-.contenedor-t {
+.contenedor-tarjetas-Entrega {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   margin: 0 10px 20px;
@@ -39,59 +37,54 @@
   justify-content: flex-start;
   align-items: center;
 }
-
-.Descripcion-e a {
+.Descripcion-Entregas a {
   text-decoration: none;
   color: #ff9490;
 }
 
 /* Hover para Descripcion-e a */
-.Descripcion-e a:hover {
+.Descripcion-Entregas a:hover {
   text-decoration: none;
   color: #8fd0ff;
 }
-
-.imagen-e {
+.imagen-tarjeta-Entregas {
   margin: 0 10px;
 }
 
 @media screen and (min-width: 540px) {
-  .contenedor-t {
+  .contenedor-tarjetas-Entrega {
     font-size: 13px;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .contenedor-t {
+  .contenedor-tarjetas-Entrega {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width: 660px) {
-  .contenedor-t {
+  .contenedor-tarjetas-Entrega {
     font-size: 15px;
     padding: 15px 0;
     justify-content: flex-start;
   }
-
-  .imagen-e {
+  .imagen-tarjeta-Entregas {
     margin: 0 30px 0;
   }
 }
 
 @media screen and (min-width: 1300px) {
-  .grande {
+  .grande-Entregas {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    justify-content: space-between;
   }
-
-  .contenedor-t {
+  .contenedor-tarjetas-Entrega {
     width: 90%;
   }
-
-  .Descripcion-e {
+  .Descripcion-Entregas {
     margin: 0 30px 0 0;
   }
 }

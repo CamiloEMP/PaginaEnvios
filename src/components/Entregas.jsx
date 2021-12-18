@@ -7,8 +7,8 @@ export const Entregas = () => {
       <>
       <Header />
         <div className="container1">
-            <div className="container-Entregas">
-                <div className="titulo">
+            <div className="contenedor-Entregas">
+                <div className="titulo-Entregas">
                     <p>Envios entregados</p>
                 </div>
                 <div className="grande">
@@ -16,7 +16,7 @@ export const Entregas = () => {
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
-                        <div className="Descripcion-e">
+                        <div className="Descripcion-Entregas">
                             <p>Número de guía: 12455QJE</p>
                             <p>Dirección de envío: Transversak 17 # 66 - 87</p>
                             <p>Nombre: Sussan López</p>
@@ -27,7 +27,7 @@ export const Entregas = () => {
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
-                        <div className="Descripcion-e">
+                        <div className="Descripcion-Entregas">
                             <p>Número de guía: 94321PRE</p>
                             <p>Dirección de envío: Calle  15 # 18 - 19  Sur</p>
                             <p>Nombre: Juanita Alimaña</p>
