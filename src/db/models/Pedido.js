@@ -6,6 +6,7 @@ const pedidoSchema = new Schema({
   lugarDestino: Object,
   lugarOrigen: Object,
   destinatario: Object,
+  barrio: String,
   estado: String,
   codigo: Number,
   usuario: [{
