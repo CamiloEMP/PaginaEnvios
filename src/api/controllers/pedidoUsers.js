@@ -1,6 +1,8 @@
 const pedidoUsers = require("express").Router();
+const jwt = require("jsonwebtoken");
 const { Register } = require("../../db/models/Register");
 const { Pedido } = require("../../db/models/Pedido");
+const generateCode = require("../../utils/generateCodePedido");
 
 pedidoUsers.get("/", async (req, res) => {
   const pedidos = await Pedido.find({}).populate("usuario", {
@@ -16,29 +18,46 @@ pedidoUsers.post("/", async (req, res) => {
     lugarDestino,
     lugarOrigen,
     destinatario,
-    estado,
-    codigo,
-    idUsuario,
+    barrio,
   } = body;
-  if (!idUsuario) {
-    return res.status(400).json({
-      error: "Contenido incompleto para generar el envio",
+
+  const authorization = req.get("authorization");
+  let token = '';
+
+  if (authorization && authorization.toLocaleLowerCase().startsWith("bearer")) {
+    token = authorization.substring(7);
+  }
+  let decodedToken = {};
+
+  try {
+    decodedToken = jwt.verify(token, process.env.SECRET_TOKEN);
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (!token || !decodedToken.id) {
+    return res.status(401).json({
+      error: "token missing or invalid",
     });
   }
+  
+  const {id: idUsuario} = decodedToken;
   const user = await Register.findById(idUsuario);
   if (!user) {
     return res.status(400).json({
       error: "User not exist",
     });
   }
+  const codigoPedido = Number(generateCode(8));
   const newPedido = new Pedido({
     direccion,
     fechaPedido: new Date(),
     lugarDestino,
     lugarOrigen,
     destinatario,
-    estado,
-    codigo,
+    barrio,
+    estado: "Cancelado",
+    codigo: codigoPedido,
     usuario: user._id,
   });
   try {

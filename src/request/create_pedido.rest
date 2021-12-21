@@ -1,12 +1,12 @@
 POST http://localhost:8080/api/pedido HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmQ1OTM2ZDFmYmQ2YTJhMjYxNmI2NyIsIm5hbWUiOiJDYW1pbG8iLCJ0aXBvVXNlciI6Im5vcm1hbCIsImlhdCI6MTYzOTc5OTM5N30.14sse31H-Yg1lkrX_PONrKXzFcsf3jUlslQcGLw7P34
 
 {
-  "direccion": "calle 41 sur",
+  "direccion": "calle 42 sur",
   "lugarDestino": "Bogota",
-  "lugarOrigen": "Bogota",
-  "destinatario": "Pepito",
-  "estado": "Cancelar",
-  "codigo": "54123",
-  "idUsuario": "61bd4ef60d13fd6b1c94350c"
+  "lugarOrigen": "Medellin",
+  "destinatario": "Luisa",
+  "barrio": "San Oriental",
+  "estado": "Cancelar"
 }
