@@ -1,12 +1,11 @@
 POST http://localhost:8080/api/pedido HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmQ1OTM2ZDFmYmQ2YTJhMjYxNmI2NyIsIm5hbWUiOiJDYW1pbG8iLCJ0aXBvVXNlciI6Im5vcm1hbCIsImlhdCI6MTYzOTc5OTM5N30.14sse31H-Yg1lkrX_PONrKXzFcsf3jUlslQcGLw7P34
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmZiNTg2YTRlZWRhZTI5OTMyODU2ZiIsIm5hbWUiOiJDYW1pbG8gTW9yYSIsInRpcG9Vc2VyIjoibm9ybWFsIiwiaWF0IjoxNjM5OTU0NjE2fQ.vFKXxInVpIwBagBXwDNKOSa24TprSmXy0g5fVIJkYxI
 
 {
   "direccion": "calle 42 sur",
   "lugarDestino": "Bogota",
   "lugarOrigen": "Medellin",
   "destinatario": "Luisa",
-  "barrio": "San Oriental",
-  "estado": "Cancelar"
+  "barrio": "San Oriental"
 }

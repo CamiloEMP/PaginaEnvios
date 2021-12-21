@@ -12,11 +12,7 @@ app.use(express.json());
 
 app.use("/api/register", registerUser)
 
-app.use("/api/register", registerUser)
-
 app.use("/api/login", loginUsers);
-
-app.use("/api/pedido", pedidosUser);
 
 app.use("/api/pedido", pedidosUser);
 

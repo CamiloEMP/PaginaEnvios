@@ -8,6 +8,12 @@ registerUser.get("/", async (req, res) => {
   res.json(users).end();
 });
 
+registerUser.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  const users = await Register.findOne({id}).populate("pedidos");
+  res.json(users.pedidos).end();
+});
+
 registerUser.post("/", (req, res) => {
   const userRegister = req.body;
   if (!userRegister) {
@@ -23,7 +29,7 @@ registerUser.post("/", (req, res) => {
         name: userRegister.name,
         email: userRegister.email,
         passwordHash: hash,
-        tipoUser: "normal",
+        tipoUser: userRegister.tipoUser || "normal",
       });
       newUserRegister
         .save()

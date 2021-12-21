@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { dataF } from "../DataProvisional";
+import { dataF } from "../DataProvisionalsional";
 const Context = createContext();
 
 const GlobalContext = ({ children }) => {
@@ -15,6 +15,8 @@ const GlobalContext = ({ children }) => {
 
   const [userError, setUserError] = useState(false);
   const [registerCorrect, setRegisterCorrect] = useState(false)
+
+  const [user, setUser] = useState(null)
   const closeLogin = () => {
     setOpenModal({ ...openModal, login: false });
   };
@@ -30,6 +32,8 @@ const GlobalContext = ({ children }) => {
     setUserError(false)
     setRegisterCorrect(false)
   };
+
+  const [dataUserInter, setDataUserIntern] = useState([]);
 
   const [searchValue, setSearchValue] = useState("");
   let searchedValue = [];
@@ -107,6 +111,10 @@ const GlobalContext = ({ children }) => {
         setUserError,
         registerCorrect,
         setRegisterCorrect,
+        user,
+        setUser,
+        dataUserInter,
+        setDataUserIntern,
       }}
     >
       {children}

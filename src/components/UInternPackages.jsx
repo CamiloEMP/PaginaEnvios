@@ -1,23 +1,15 @@
 import "../styles/UInternPackages.css";
 import { Context } from "../context/Context";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Header } from "./Header/index";
 import { IoSearchOutline } from "react-icons/io5";
 import { UInternShipping } from "./UInternShipping";
-import axios from "axios";
 export const UInternPackages = () => {
-  const { searchValue, searchedValue, SearchNameDestinatary } =
-    useContext(Context);
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/pedido")
-      .then((res) => {
-        setData(res.data);
-        console.log(data)
-      })
-      .catch((e) => console.log("Error"));
-  }, []);
+  const {
+    searchValue,
+    searchedValue,
+    SearchNameDestinatary,
+  } = useContext(Context);
   return (
     <>
       <Header />

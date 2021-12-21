@@ -44,6 +44,23 @@
   text-decoration: underline;
 }
 
+.header-UIP .UserMenu-UIP .path-UIP:last-child {
+  color: #fff;
+  border: 3px solid rgb(92, 187, 255);
+  border-radius: 22px;
+  background-color: rgb(92, 187, 255);
+  font-size: 22px;
+  font-weight: 700;
+  padding: 4px 12px;
+}
+
+.header-UIP .UserMenu-UIP .path-UIP:last-child:hover {
+  color: rgb(92, 187, 255);
+  background-color: #fff;
+  transition: all 500ms ease;
+  border: 3px solid rgb(92, 187, 255);
+}
+
 .header-UIP .UserMenu-UIP button {
   color: #fff;
   border: 3px solid rgb(92, 187, 255);

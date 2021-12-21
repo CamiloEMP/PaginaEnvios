@@ -43,6 +43,7 @@ pedidoUsers.post("/", async (req, res) => {
   
   const {id: idUsuario} = decodedToken;
   const user = await Register.findById(idUsuario);
+  console.log(user)
   if (!user) {
     return res.status(400).json({
       error: "User not exist",
@@ -56,13 +57,17 @@ pedidoUsers.post("/", async (req, res) => {
     lugarOrigen,
     destinatario,
     barrio,
-    estado: "Cancelado",
+    estado: "Cancelar",
     codigo: codigoPedido,
     usuario: user._id,
   });
+
+  console.log(newPedido)
   try {
     const savePedido = await newPedido.save();
+    console.log(savePedido)
     user.pedidos = user.pedidos.concat(savePedido._id);
+    console.log(user.pedidos)
     await user.save();
     res.json(savePedido);
   } catch (error) {

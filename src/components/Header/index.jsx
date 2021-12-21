@@ -8,20 +8,28 @@ import { useContext } from "react";
 
 export const Header = () => {
   const { openMenu, onOpenMenu } = useContext(Context);
-
+  const userLS = window.localStorage.getItem("loggedUser");
+  const user = JSON.parse(userLS)
   return (
-      <header className="header-UIP">
-        <img src={logo} alt="Logo" />
-        <div className="IoMenu-container">
-          <IoMenu className="IoMenu" onClick={onOpenMenu} />
-          {!!openMenu && <OpenMenuMobile />}
-        </div>
-        <div className="UserMenu-UIP">
-          <Link to="/" className="path-UIP">
-            Home
-          </Link>
-          <button>Log out</button>
-        </div>
-      </header>
+    <header className="header-UIP">
+      <img src={logo} alt="Logo" />
+      <div className="IoMenu-container">
+        <IoMenu className="IoMenu" onClick={onOpenMenu} />
+        {!!openMenu && <OpenMenuMobile />}
+      </div>
+      <div className="UserMenu-UIP">
+        <Link
+          to={
+            user.tipoUser === "trabajador"
+              ? "/home-user-extern"
+              : "/home-user-intern"
+          }
+          className="path-UIP"
+        >
+          Home
+        </Link>
+        <Link className="path-UIP" to={`/`} onClick={() => window.localStorage.clear()}>Log out</Link>
+      </div>
+    </header>
   );
 };

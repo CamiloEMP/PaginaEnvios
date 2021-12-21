@@ -1,14 +1,23 @@
 import "./FormLog_Reg.css";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from 'react-router';
 import axios from "axios"
 const FormLogin = () => {
   const navigate = useNavigate();
-  const { closeLogin, expresionesRegulares, setUserError } =
+  const { closeLogin, expresionesRegulares, setUserError, setUser } =
     useContext(Context);
+
+  useEffect(() => {
+    const loggedUser = window.localStorage.getItem('loggedUser')
+    if (loggedUser) {
+      const newUser = JSON.parse(loggedUser)
+      setUser(newUser)
+    }
+  })
+
   return (
     <Formik
       initialValues={{
@@ -38,10 +47,18 @@ const FormLogin = () => {
             passwordLogin,
           })
           .then((res) => {
+            const dataUser = res.data;
+            console.log(dataUser)
+            window.localStorage.clear()
+            window.localStorage.setItem('loggedUser', JSON.stringify(dataUser))
             if (res.data && res.data.tipoUser === "normal") {
               navigate("/home-user-extern")
             }
-          }).catch(() => {
+            else if (res.data && res.data.tipoUser === "trabajador") {
+              navigate("/home-user-intern")
+            }
+          }).catch((e) => {
+            console.log(e)
             setUserError(true);
             closeLogin();
           });

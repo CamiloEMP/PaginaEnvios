@@ -6,7 +6,7 @@ const { Register } = require("../../db/models/Register");
 loginUsers.post("/", async (req, res) => {
   const { body } = req;
   const { emailLogin, passwordLogin } = body;
-  const user = await Register.findOne({ emailLogin });
+  const user = await Register.findOne({email: emailLogin});
   if (!user) {
     res.status(401).end();
   }
@@ -24,13 +24,12 @@ loginUsers.post("/", async (req, res) => {
     name: user.name,
     tipoUser: user.tipoUser,
   };
-
   const token = jwt.sign(userForToken, process.env.SECRET_TOKEN);
-
   res
     .send({
       name: user.name,
       tipoUser: user.tipoUser,
+      id: user._id,
       token,
     })
     .end();
