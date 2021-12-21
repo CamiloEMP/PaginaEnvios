@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Header } from "./Header";
 import Group169 from "../img/Group169.png";
 import "../styles/Entregados1.css";
@@ -11,7 +12,7 @@ export const Entregas = () => {
                 <div className="titulo-Entregas">
                     <p>Envios entregados</p>
                 </div>
-                <div className="grande">
+                <div className="grande-Entregas">
                     <div className="contenedor-tarjetas-Entrega">
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
@@ -20,10 +21,12 @@ export const Entregas = () => {
                             <p>Número de guía: 12455QJE</p>
                             <p>Dirección de envío: Transversak 17 # 66 - 87</p>
                             <p>Nombre: Sussan López</p>
-                            {/* <Link to="">Ver más...</Link> */}
+                                <Link to="/Entregas2">
+                                Ver más...
+                                </Link>
                         </div>  
                     </div>
-                    <div className="contenedor-t">
+                    <div className="contenedor-tarjetas-Entrega">
                         <div className="imagen-e">
                             <img src= {Group169} alt="Imagen"/>
                         </div>
@@ -31,7 +34,7 @@ export const Entregas = () => {
                             <p>Número de guía: 94321PRE</p>
                             <p>Dirección de envío: Calle  15 # 18 - 19  Sur</p>
                             <p>Nombre: Juanita Alimaña</p>
-                           {/*  <Link to="/home-user-intern">Ver más...</Link> */}
+                            <Link to="/Entregas2">Ver más...</Link>
                         </div>  
                     </div>
                 </div>

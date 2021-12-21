@@ -26,8 +26,6 @@ function App() {
           <Route exact path="/PackegesReception" element={<PackegesReception />} />
           <Route exact path="/Entregas" element={<Entregas />} />
           <Route exact path="/Entregas2" element={<Entregas2 />} />
-          <Route exact path="/FormUser" element={<FormUser />} />
-          {/* <Route exact path="/Entregas2" element={<Entregas2 />} /> */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </GlobalContext>

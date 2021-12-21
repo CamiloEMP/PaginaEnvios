@@ -73,13 +73,20 @@
     margin: 0 30px 0;
   }
 }
-
+@media screen and (min-width: 700px) {
+  .imagen-e img {
+    margin: 0 25px 0;
+  }
+}
 @media screen and (min-width: 1300px) {
   .grande-Entregas {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
+  }
+  .imagen-e img {
+    margin: 0 25px 0;
   }
   .contenedor-tarjetas-Entrega {
     width: 90%;
