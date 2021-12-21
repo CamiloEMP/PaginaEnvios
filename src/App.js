@@ -11,7 +11,7 @@ import { Home } from "./components/Home";
 import { HomeUsers } from "./components/HomeUsers";
 import { HomeUserExtern } from "./components/HomeUserExtern";
 import { PackegesReception } from "./components/PackegesReception";
-import { FormUser } from "./components/FormUser";
+
 function App() {
   return (
     <>
