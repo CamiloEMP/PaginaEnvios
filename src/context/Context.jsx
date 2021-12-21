@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { dataF } from "../DataProvisionalsional";
+import { dataF } from "../utils/DataProvisional";
+import { dataTrabajador } from "../utils/DataTrabajador";
 const Context = createContext();
 
 const GlobalContext = ({ children }) => {
@@ -14,9 +15,9 @@ const GlobalContext = ({ children }) => {
   });
 
   const [userError, setUserError] = useState(false);
-  const [registerCorrect, setRegisterCorrect] = useState(false)
+  const [registerCorrect, setRegisterCorrect] = useState(false);
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
   const closeLogin = () => {
     setOpenModal({ ...openModal, login: false });
   };
@@ -29,11 +30,9 @@ const GlobalContext = ({ children }) => {
     event.target.textContent === "Login"
       ? setOpenModal({ ...openModal, login: true })
       : setOpenModal({ ...openModal, signUp: true });
-    setUserError(false)
-    setRegisterCorrect(false)
+    setUserError(false);
+    setRegisterCorrect(false);
   };
-
-  const [dataUserInter, setDataUserIntern] = useState([]);
 
   const [searchValue, setSearchValue] = useState("");
   let searchedValue = [];
@@ -60,6 +59,33 @@ const GlobalContext = ({ children }) => {
 
   const SearchNameDestinatary = (e) => {
     setSearchValue(e.target.value);
+  };
+
+  const [searchValueTrabajador, setSearchValueTrabajador] = useState("");
+  let searchedValueTrabajador = [];
+  if (!searchValueTrabajador >= 1) {
+    searchedValueTrabajador = dataTrabajador;
+  } else {
+    searchedValueTrabajador = dataTrabajador.filter((item) => {
+      const nameDestinataryText = item.nameDestinatary.toLocaleLowerCase();
+      const cityText = item.state.toLocaleLowerCase();
+      const detinyText = item.destiny.toLocaleLowerCase();
+      const searchText = searchValueTrabajador.toLocaleLowerCase();
+
+      if (detinyText.includes(searchText)) {
+        return detinyText.includes(searchText);
+      }
+
+      if (cityText.includes(searchText)) {
+        return cityText.includes(searchText);
+      }
+
+      return nameDestinataryText.includes(searchText);
+    });
+  }
+
+  const SearchTrabajador = (e) => {
+    setSearchValueTrabajador(e.target.value);
   };
 
   const expresionesRegulares = {
@@ -113,8 +139,8 @@ const GlobalContext = ({ children }) => {
         setRegisterCorrect,
         user,
         setUser,
-        dataUserInter,
-        setDataUserIntern,
+        searchedValueTrabajador,
+        SearchTrabajador
       }}
     >
       {children}

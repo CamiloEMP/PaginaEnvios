@@ -21,8 +21,8 @@ export const Header = () => {
         <Link
           to={
             user.tipoUser === "trabajador"
-              ? "/home-user-extern"
-              : "/home-user-intern"
+              ? "/home-user-intern"
+              : "/home-user-extern"
           }
           className="path-UIP"
         >

@@ -2,6 +2,7 @@ import "../styles/Home.css";
 import { Header } from "./Header";
 import box_home from "../img/box-home.png";
 import tabla from "../img/Tabla.png";
+import { Link } from "react-router-dom";
 import c1 from "../img/C1.png";
 import c2 from "../img/C2.png";
 import c3 from "../img/C3.png";
@@ -14,13 +15,15 @@ export const Home = () => {
       <Header />
       <div className="container-home">
         <div className="Contenedor-P">
-          <div className="Contenedor-1">
-            <div className="container-img-box">
-              <img src={c1} alt="" />
-              <img src={box_home} alt="" />
+          <Link to="/user-intern">
+            <div className="Contenedor-1">
+              <div className="container-img-box">
+                <img src={c1} alt="" />
+                <img src={box_home} alt="" />
+              </div>
+              <p> Recepción de paquetes </p>
             </div>
-            <p> Recepción de paquetes </p>
-          </div>
+          </Link>
           <div className="Contenedor-2">
             <div className="container-img-box">
               <img src={c2} alt="" />

@@ -19,7 +19,7 @@ export const HomeUserExtern = () => {
         <h2>Bienvenido {user.name} ¿Que deseas hacer hoy?</h2>
       </section>
       <main className="main-extern-container">
-        <Link style={aStyle} to="/user-intern">
+        <Link style={aStyle} to="/user-extern">
           <div className="container-card card1">
             <div className="container-img">
               <img src={c2} alt="" />
@@ -28,7 +28,7 @@ export const HomeUserExtern = () => {
             <p> Programar envio </p>
           </div>
         </Link>
-        <Link style={aStyle} to="/user-intern">
+        <Link style={aStyle} to="/user-extern">
           <div className="container-card card2">
             <div className="container-img">
               <img src={c3} alt="" />
@@ -37,7 +37,7 @@ export const HomeUserExtern = () => {
             <p> Cancelar envío </p>
           </div>
         </Link>
-        <Link style={aStyle} to="/user-intern">
+        <Link style={aStyle} to="/user-extern">
           <div className="container-card card3">
             <div className="container-img">
               <img src={c1} alt="" />

@@ -11,7 +11,7 @@ import { Home } from "./components/Home";
 import { HomeUsers } from "./components/HomeUsers";
 import { HomeUserExtern } from "./components/HomeUserExtern";
 import { PackegesReception } from "./components/PackegesReception";
-import { FormUser } from "./components/FormUser";
+
 function App() {
   return (
     <>
@@ -26,7 +26,6 @@ function App() {
           <Route exact path="/PackegesReception" element={<PackegesReception />} />
           <Route exact path="/Entregas" element={<Entregas />} />
           <Route exact path="/Entregas2" element={<Entregas2 />} />
-          <Route exact path="/FormUser" element={<FormUser />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </GlobalContext>

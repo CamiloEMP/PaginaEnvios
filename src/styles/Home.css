@@ -21,6 +21,11 @@
 	margin-bottom: 100px;;
 }
 
+.Contenedor-P a {
+	text-decoration: none;
+	color: #000;
+}
+
 .Contenedor-1,
 .Contenedor-2,
 .Contenedor-3,

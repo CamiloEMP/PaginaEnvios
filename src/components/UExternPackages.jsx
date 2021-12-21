@@ -7,6 +7,7 @@ import { UIExternShipping } from "./UIExternShipping";
 export const UExternPackages = () => {
   const { searchValue, searchedValue, SearchNameDestinatary } =
     useContext(Context);
+    console.log(searchValue)
   return (
     <>
       <Header />

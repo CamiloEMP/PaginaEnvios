@@ -6,9 +6,9 @@ import { IoSearchOutline } from "react-icons/io5";
 import { UInternShipping } from "./UInternShipping";
 export const UInternPackages = () => {
   const {
-    searchValue,
-    searchedValue,
-    SearchNameDestinatary,
+    searchedValueTrabajador,
+    SearchTrabajador,
+    infoTrabajador,
   } = useContext(Context);
   return (
     <>
@@ -17,8 +17,8 @@ export const UInternPackages = () => {
         <div>
           <input
             type="text"
-            onChange={SearchNameDestinatary}
-            value={searchValue}
+            onChange={SearchTrabajador}
+            value={infoTrabajador}
             placeholder="Filtra por: Nombre destinatario, Destino o Estado"
           />
           <IoSearchOutline />
@@ -31,7 +31,7 @@ export const UInternPackages = () => {
             <li>Código</li>
             <li>Estado</li>
           </ul>
-          {searchedValue.map((item) => (
+          {searchedValueTrabajador.map((item) => (
             <UInternShipping props={item} key={item.code} />
           ))}
         </section>
